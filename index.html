@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">PM Tracker</a>
+        <div class="d-flex">
+            <button class="btn btn-outline-light btn-sm me-2" onclick="app.loadData()">🔄 Ricarica</button>
+            <button class="btn btn-warning btn-sm" onclick="app.showSettings()">⚙️ Config</button>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid px-4">
+    <div id="alertArea"></div>
+
+    <!-- Tabs Nav -->
+    <ul class="nav nav-tabs mb-3" id="mainTab" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link" id="list-tab" data-bs-toggle="tab" data-bs-target="#listView" type="button">📋 Elenco Progetti</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link active" id="gantt-tab" data-bs-toggle="tab" data-bs-target="#ganttView" type="button">📊 Gantt Sviluppo</button>
+        </li>
+        <li class="nav-item">
+            <button class="nav-link" id="calendar-tab" data-bs-toggle="tab" data-bs-target="#calendarView" type="button">📅 Calendario Rilasci</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="mainTabContent">
+
+        <!-- Tab 1: Lista -->
+        <div class="tab-pane fade" id="listView">
+            <div class="d-flex justify-content-between mb-3 flex-wrap gap-2">
+                <button class="btn btn-success" onclick="app.openModal()">+ Nuovo Progetto</button>
+                <div class="d-flex flex-wrap gap-2 align-items-center">
+                    <div class="d-flex align-items-center gap-1">
+                        <label class="form-label mb-0 small fw-semibold">🔄 Ordina:</label>
+                        <select id="tableSortSelect" class="form-select form-select-sm" style="min-width:220px" onchange="app.renderTable()">
+                            <option value="prod_inprogress_first">🚀 Prod: in corso prima, poi passate</option>
+                            <option value="prod_asc">📅 Rilascio Prod (prima → ultima)</option>
+                            <option value="prod_desc">📅 Rilascio Prod (ultima → prima)</option>
+                            <option value="devStart_inprogress_first">▶️ Dev Start: in corso prima, poi passate</option>
+                            <option value="devStart_asc">📅 Inizio Sviluppo (prima → ultima)</option>
+                            <option value="devStart_desc">📅 Inizio Sviluppo (ultima → prima)</option>
+                            <option value="devEnd_inprogress_first">⏹️ Dev End: in corso prima, poi passate</option>
+                            <option value="test_inprogress_first">🧪 Rilascio Test: in corso prima</option>
+                            <option value="alpha_asc">🔤 Ordine Alfabetico (A → Z)</option>
+                            <option value="alpha_desc">🔤 Ordine Alfabetico (Z → A)</option>
+                        </select>
+                    </div>
+                    <select id="tableFornitoreFilter" class="form-select form-select-sm" style="min-width:180px" onchange="app.renderTable()">
+                        <option value="">Tutti i fornitori</option>
+                    </select>
+                    <select id="tableOwnerFilter" class="form-select form-select-sm" style="min-width:180px" onchange="app.renderTable()">
+                        <option value="">Tutti gli owner</option>
+                    </select>
+                    <input type="text" id="searchInput" class="form-control form-control-sm" style="min-width:180px" placeholder="Cerca progetto..." onkeyup="app.renderTable()">
+                </div>
+            </div>
+            <div class="table-responsive bg-white shadow-sm rounded">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Progetto</th>
+                            <th>Fornitori / Owner</th>
+                            <th>Stima</th>
+                            <th>IA</th>
+                            <th>Sviluppo (Start-End)</th>
+                            <th>Test</th>
+                            <th>Prod</th>
+                            <th>Azioni</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projectsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tab 2: Gantt (DEFAULT) -->
+        <div class="tab-pane fade show active" id="ganttView">
+            <div class="card shadow-sm p-3">
+                <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                    <button class="btn btn-success btn-sm" onclick="app.openModal()">+ Nuovo Progetto</button>
+                    <div class="d-flex align-items-center gap-2">
+                        <h6 class="text-muted mb-0 d-none d-md-block">Visualizzazione temporale fase di Sviluppo</h6>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                        <div class="d-flex align-items-center gap-1">
+                            <label class="form-label mb-0 small fw-semibold">🔄 Ordina:</label>
+                            <select id="ganttSortSelect" class="form-select form-select-sm" style="min-width:220px" onchange="app.renderGantt()">
+                                <option value="prod_inprogress_first">🚀 Prod: in corso prima, poi passate</option>
+                                <option value="prod_asc">📅 Rilascio Prod (prima → ultima)</option>
+                                <option value="prod_desc">📅 Rilascio Prod (ultima → prima)</option>
+                                <option value="devStart_inprogress_first">▶️ Dev Start: in corso prima, poi passate</option>
+                                <option value="devStart_asc">📅 Inizio Sviluppo (prima → ultima)</option>
+                                <option value="devStart_desc">📅 Inizio Sviluppo (ultima → prima)</option>
+                                <option value="devEnd_inprogress_first">⏹️ Dev End: in corso prima, poi passate</option>
+                                <option value="test_inprogress_first">🧪 Rilascio Test: in corso prima</option>
+                                <option value="alpha_asc">🔤 Ordine Alfabetico (A → Z)</option>
+                                <option value="alpha_desc">🔤 Ordine Alfabetico (Z → A)</option>
+                            </select>
+                        </div>
+                        <div class="d-flex align-items-center gap-1">
+                            <label class="form-label mb-0 small fw-semibold">🔍 Fornitore:</label>
+                            <select id="ganttFornitoreFilter" class="form-select form-select-sm" style="min-width:180px" onchange="app.renderGantt()">
+                                <option value="">Tutti</option>
+                            </select>
+                        </div>
+                        <div class="d-flex align-items-center gap-1">
+                            <label class="form-label mb-0 small fw-semibold">👤 Owner:</label>
+                            <select id="ganttOwnerFilter" class="form-select form-select-sm" style="min-width:180px" onchange="app.renderGantt()">
+                                <option value="">Tutti</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div id="gantt-chart"></div>
+            </div>
+        </div>
+
+        <!-- Tab 3: Calendario -->
+        <div class="tab-pane fade" id="calendarView">
+            <div class="d-flex justify-content-end mb-3 flex-wrap gap-2">
+                <div class="d-flex align-items-center gap-2">
+                    <label class="form-label mb-0 small fw-semibold">🏷️ Milestone:</label>
+                    <select id="calendarMilestoneFilter" class="form-select form-select-sm" style="min-width:210px" onchange="app.renderCalendar()">
+                        <option value="">Tutte le milestone</option>
+                        <option value="dataIA">🤖 Consegna IA</option>
+                        <option value="devStart">▶️ Inizio Sviluppo</option>
+                        <option value="devEnd">⏹️ Fine Sviluppo</option>
+                        <option value="dataUAT">👥 UAT</option>
+                        <option value="dataBS">💼 Business Simulation</option>
+                        <option value="dataTest">🧪 Rilascio Test</option>
+                        <option value="dataProd">🚀 Rilascio Prod</option>
+                        <option value="dataScadenzaStima">📥 Scad. Stima Fornitore</option>
+                        <option value="dataConfigSistema">🔧 Config Sistema</option>
+                    </select>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <label class="form-label mb-0 small fw-semibold">🔍 Fornitore:</label>
+                    <select id="calendarFornitoreFilter" class="form-select form-select-sm" style="min-width:180px" onchange="app.renderCalendar()">
+                        <option value="">Tutti</option>
+                    </select>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <label class="form-label mb-0 small fw-semibold">👤 Owner:</label>
+                    <select id="calendarOwnerFilter" class="form-select form-select-sm" style="min-width:180px" onchange="app.renderCalendar()">
+                        <option value="">Tutti</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" id="calendarContainer"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Editor -->
+<div class="modal fade" id="editorModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Gestione Progetto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="projectForm">
+                    <input type="hidden" id="p_id">
+                    <div class="mb-3">
+                        <label class="form-label">Nome Progetto *</label>
+                        <input type="text" class="form-control" id="p_nome" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Fornitori (separati da virgola) *</label>
+                            <input type="text" class="form-control" id="p_fornitori" placeholder="Es: Fornitore A, Fornitore B" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Owner (separati da virgola) *</label>
+                            <input type="text" class="form-control" id="p_owners" placeholder="Es: Marco, Sara" required>
+                        </div>
+                    </div>
+
+                    <h6 class="mt-4 border-bottom pb-2">Timeline (Sequenziale)</h6>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label small">1. Stima Pianificazione</label>
+                            <input type="date" class="form-control" id="p_stima" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">2. Condivisione IA</label>
+                            <input type="date" class="form-control" id="p_ia" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">3. Start Sviluppo</label>
+                            <input type="date" class="form-control" id="p_devStart" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">4. End Sviluppo</label>
+                            <input type="date" class="form-control" id="p_devEnd" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">5. Rilascio Test</label>
+                            <input type="date" class="form-control" id="p_test" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">6. Rilascio Prod</label>
+                            <input type="date" class="form-control" id="p_prod" required>
+                        </div>
+                    </div>
+
+                    <h6 class="mt-4 border-bottom pb-2">Milestone Opzionali</h6>
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label small">UAT <span class="text-muted">(opzionale)</span></label>
+                            <input type="date" class="form-control" id="p_uat">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">BS - Business Simulation <span class="text-muted">(opzionale)</span></label>
+                            <input type="date" class="form-control" id="p_bs">
+                        </div>
+                    </div>
+
+                    <h6 class="mt-4 border-bottom pb-2">Dati Economici & Operativi <span class="text-muted fw-normal small">(opzionali)</span></h6>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small">📅 Data entro cui avere la stima dal fornitore</label>
+                            <input type="date" class="form-control" id="p_dataScadenzaStima">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small">📅 Data entro cui serve configurazione da altro sistema</label>
+                            <input type="date" class="form-control" id="p_dataConfigSistema">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">⏱️ Stima fornitore (gg/u)</label>
+                            <input type="number" class="form-control" id="p_stimaGgu" min="0" step="0.5" placeholder="Es: 10">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">💶 RC Fornitore (€/gg)</label>
+                            <input type="number" class="form-control" id="p_rcFornitore" min="0" step="0.01" placeholder="Es: 500">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small">💰 Stima costo (calcolato automaticamente)</label>
+                            <input type="text" class="form-control bg-light fw-bold" id="p_stimaCosto" readonly placeholder="gg/u × RC">
+                        </div>
+                    </div>
+
+                    <div id="dateValidationMsg" class="text-danger mt-2 small"></div>
+
+                    <!-- Link Jira multipli (fino a 10) -->
+                    <h6 class="mt-4 border-bottom pb-2">Link Jira <span class="text-muted fw-normal small">(opzionali, fino a 10)</span></h6>
+                    <div id="jiraLinksContainer">
+                        <!-- I campi vengono generati dinamicamente da app.js -->
+                    </div>
+                    <button type="button" class="btn btn-outline-secondary btn-sm mt-2" onclick="app.addJiraField()" id="addJiraBtn">+ Aggiungi Link Jira</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                <button type="button" class="btn btn-primary" onclick="app.saveProject()">Salva & Pubblica</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Configurazione -->
+<div class="modal fade" id="settingsModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-warning">
+                <h5 class="modal-title">Configurazione GitHub</h5>
+            </div>
+            <div class="modal-body">
+                <p class="small">Per salvare i dati, serve un Personal Access Token (PAT) con permessi <code>repo</code>.</p>
+                <div class="mb-3">
+                    <label class="form-label">GitHub Username</label>
+                    <input type="text" id="cfg_owner" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Repository Name</label>
+                    <input type="text" id="cfg_repo" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Personal Access Token (PAT)</label>
+                    <input type="password" id="cfg_token" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Path File Dati</label>
+                    <input type="text" id="cfg_path" class="form-control" value="data/projects.json">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="app.saveSettings()">Salva Config</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/it.js"></script>
+<script>dayjs.locale('it');</script>
+<script src="assets/app.js?v=13"></script>
+</body>
+</html>
