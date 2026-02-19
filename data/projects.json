@@ -78,5 +78,31 @@
     "stimaGgu": 14,
     "rcFornitore": 360,
     "stimaCosto": 5040
+  },
+  {
+    "id": "1771517172570",
+    "nome": "Riskshield",
+    "fornitori": [
+      "Accenture"
+    ],
+    "owners": [
+      "Flavia"
+    ],
+    "dataStima": "2026-02-18",
+    "dataIA": "2026-02-26",
+    "devStart": "2026-02-23",
+    "devEnd": "2026-03-05",
+    "dataTest": "2026-03-06",
+    "dataProd": "2026-03-19",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/RISKSHIELD-267"
+    ],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 15,
+    "rcFornitore": 364,
+    "stimaCosto": 5460
   }
 ]
