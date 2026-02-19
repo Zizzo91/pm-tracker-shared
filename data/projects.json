@@ -78,25 +78,5 @@
     "stimaGgu": 14,
     "rcFornitore": 360,
     "stimaCosto": 5040
-  },
-  {
-    "id": "1771516805705",
-    "nome": "",
-    "fornitori": [],
-    "owners": [],
-    "dataStima": "",
-    "dataIA": "2026-02-16",
-    "devStart": "2026-02-15",
-    "devEnd": "2026-02-16",
-    "dataTest": "2026-02-18",
-    "dataProd": "2026-02-20",
-    "dataUAT": null,
-    "dataBS": null,
-    "jiraLinks": [],
-    "dataScadenzaStima": null,
-    "dataConfigSistema": null,
-    "stimaGgu": null,
-    "rcFornitore": null,
-    "stimaCosto": null
   }
 ]
