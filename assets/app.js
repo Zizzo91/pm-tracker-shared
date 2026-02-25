@@ -12,15 +12,15 @@ const app = {
     MAX_JIRA_LINKS: 10,
 
     MILESTONES: [
-        { key: 'dataIA',            label: '\ud83e\udd16 Consegna IA',           badge: 'bg-info text-dark' },
-        { key: 'devStart',          label: '\u25b6\ufe0f Inizio Sviluppo',        badge: 'bg-primary' },
-        { key: 'devEnd',            label: '\u23f9\ufe0f Fine Sviluppo',          badge: 'bg-secondary' },
-        { key: 'dataUAT',           label: '\ud83d\udc65 UAT',                    badge: 'bg-info' },
-        { key: 'dataBS',            label: '\ud83d\udcbc Business Simulation',    badge: 'bg-dark' },
-        { key: 'dataTest',          label: '\ud83e\uddea Rilascio Test',          badge: 'bg-warning text-dark' },
-        { key: 'dataProd',          label: '\ud83d\ude80 Rilascio Prod',          badge: 'bg-success' },
-        { key: 'dataScadenzaStima', label: '\ud83d\udce5 Scad. Stima Fornitore', badge: 'bg-light text-dark border' },
-        { key: 'dataConfigSistema', label: '\ud83d\udd27 Config Sistema',         badge: 'bg-light text-dark border' }
+        { key: 'dataIA',            label: '🤖 Consegna IA',           badge: 'bg-info text-dark' },
+        { key: 'devStart',          label: '▶️ Inizio Sviluppo',        badge: 'bg-primary' },
+        { key: 'devEnd',            label: '⏹️ Fine Sviluppo',          badge: 'bg-secondary' },
+        { key: 'dataUAT',           label: '👥 UAT',                    badge: 'bg-info' },
+        { key: 'dataBS',            label: '💼 Business Simulation',    badge: 'bg-dark' },
+        { key: 'dataTest',          label: '🧪 Rilascio Test',          badge: 'bg-warning text-dark' },
+        { key: 'dataProd',          label: '🚀 Rilascio Prod',          badge: 'bg-success' },
+        { key: 'dataScadenzaStima', label: '📥 Scad. Stima Fornitore', badge: 'bg-light text-dark border' },
+        { key: 'dataConfigSistema', label: '🔧 Config Sistema',         badge: 'bg-light text-dark border' }
     ],
 
     init: function() {
@@ -70,7 +70,7 @@ const app = {
         if (!jiraLinks || jiraLinks.length === 0) return '';
         return jiraLinks
             .filter(u => u && u.trim())
-            .map(u => `<a href="${u}" target="_blank" class="badge bg-primary text-decoration-none me-1 mb-1" title="${u}">${this.jiraLabel(u)} \ud83d\udd17</a>`)
+            .map(u => `<a href="${u}" target="_blank" class="badge bg-primary text-decoration-none me-1 mb-1" title="${u}">${this.jiraLabel(u)} 🔗</a>`)
             .join('');
     },
 
@@ -129,7 +129,7 @@ const app = {
         const rc  = parseFloat(document.getElementById('p_rcFornitore').value);
         const out = document.getElementById('p_stimaCosto');
         if (!isNaN(ggu) && !isNaN(rc) && ggu >= 0 && rc >= 0) {
-            out.value = '\u20ac ' + (ggu * rc).toLocaleString('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            out.value = '€ ' + (ggu * rc).toLocaleString('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
         } else {
             out.value = '';
         }
@@ -236,7 +236,7 @@ const app = {
             dates.devEnd   > dates.test   ||
             dates.test     > dates.prod) {
             document.getElementById('dateValidationMsg').innerText =
-                'ERRORE: La sequenza temporale non \u00e8 rispettata! (Stima \u2264 Dev Start \u2264 Dev End \u2264 Test \u2264 Prod)';
+                'ERRORE: La sequenza temporale non è rispettata! (Stima ≤ Dev Start ≤ Dev End ≤ Test ≤ Prod)';
             return;
         }
 
@@ -265,7 +265,8 @@ const app = {
             dataConfigSistema: document.getElementById('p_dataConfigSistema').value || null,
             stimaGgu:          isNaN(stimaGgu)    ? null : stimaGgu,
             rcFornitore:       isNaN(rcFornitore) ? null : rcFornitore,
-            stimaCosto:        (!isNaN(stimaGgu) && !isNaN(rcFornitore)) ? stimaGgu * rcFornitore : null
+            stimaCosto:        (!isNaN(stimaGgu) && !isNaN(rcFornitore)) ? stimaGgu * rcFornitore : null,
+            note:              document.getElementById('p_note').value
         };
         if (id) {
             this.data[this.data.findIndex(p => p.id === id)] = newProj;
@@ -321,6 +322,7 @@ const app = {
             document.getElementById('p_dataConfigSistema').value = p.dataConfigSistema || '';
             document.getElementById('p_stimaGgu').value          = p.stimaGgu    != null ? p.stimaGgu    : '';
             document.getElementById('p_rcFornitore').value       = p.rcFornitore != null ? p.rcFornitore : '';
+            document.getElementById('p_note').value              = p.note || '';
             this.calcCosto();
             const links = p.jiraLinks && p.jiraLinks.length > 0
                 ? p.jiraLinks
@@ -429,8 +431,8 @@ const app = {
             const ownBadge  = (p.owners || []).map(o => `<span class="badge bg-info text-dark me-1">${o}</span>`).join('');
 
             const extraRows = [];
-            if (p.stimaGgu   != null) extraRows.push(`<span class="badge bg-info text-dark me-1">\u23f1\ufe0f ${p.stimaGgu} gg/u</span>`);
-            if (p.stimaCosto != null) extraRows.push(`<span class="badge bg-warning text-dark me-1">\ud83d\udcb0 \u20ac ${p.stimaCosto.toLocaleString('it-IT', {minimumFractionDigits:2, maximumFractionDigits:2})}</span>`);
+            if (p.stimaGgu   != null) extraRows.push(`<span class="badge bg-info text-dark me-1">⏱️ ${p.stimaGgu} gg/u</span>`);
+            if (p.stimaCosto != null) extraRows.push(`<span class="badge bg-warning text-dark me-1">💰 € ${p.stimaCosto.toLocaleString('it-IT', {minimumFractionDigits:2, maximumFractionDigits:2})}</span>`);
 
             const links = (p.jiraLinks && p.jiraLinks.length > 0) ? p.jiraLinks : (p.jira ? [p.jira] : []);
             const jiraHtml = this.jiraLinksHtml(links);
@@ -439,7 +441,7 @@ const app = {
             <tr ${rowCls}>
                 <td>
                     <strong>${p.nome}</strong>
-                    ${isPast ? '<span class="badge bg-success ms-1">\u2705 Rilasciato</span>' : ''}
+                    ${isPast ? '<span class="badge bg-success ms-1">✅ Rilasciato</span>' : ''}
                     ${jiraHtml ? `<div class="mt-1">${jiraHtml}</div>` : ''}
                     ${extraRows.length ? `<div class="mt-1">${extraRows.join('')}</div>` : ''}
                 </td>
@@ -449,9 +451,10 @@ const app = {
                 </td>
                 <td class="text-muted small">${this.formatDate(p.dataStima)}</td>
                 <td class="text-muted small">${this.formatDate(p.dataIA)}</td>
-                <td class="small">${this.formatDate(p.devStart)} \u279d ${this.formatDate(p.devEnd)}</td>
+                <td class="small">${this.formatDate(p.devStart)} ➔ ${this.formatDate(p.devEnd)}</td>
                 <td class="text-warning small fw-bold">${this.formatDate(p.dataTest)}</td>
                 <td class="text-success small fw-bold">${this.formatDate(p.dataProd)}</td>
+                <td class="small text-muted" style="max-width: 250px; white-space: pre-wrap;">${p.note || ''}</td>
                 <td>
                     <button class="btn btn-sm btn-outline-primary" onclick="app.openModal('${p.id}')">✏️</button>
                     <button class="btn btn-sm btn-outline-danger" onclick="app.deleteProject('${p.id}')">🗑️</button>
@@ -528,15 +531,15 @@ const app = {
             const rowCls = isPast ? ' gantt-row--released' : '';
 
             const allMilestones = [
-                { date: p.dataIA,            cls: 'ms-ia',         icon: '\ud83e\udd16', label: 'Consegna IA',           always: true  },
-                { date: p.devStart,          cls: 'ms-dev-start',  icon: '\u25b6\ufe0f',  label: 'Inizio Sviluppo',       always: true  },
-                { date: p.devEnd,            cls: 'ms-dev-end',    icon: '\u23f9\ufe0f',  label: 'Fine Sviluppo',         always: true  },
-                { date: p.dataUAT,           cls: 'ms-uat',        icon: '\ud83d\udc65', label: 'UAT',                   always: false },
-                { date: p.dataBS,            cls: 'ms-bs',         icon: '\ud83d\udcbc', label: 'Business Simulation',   always: false },
-                { date: p.dataTest,          cls: 'ms-test',       icon: '\ud83e\uddea', label: 'Rilascio Test',         always: true  },
-                { date: p.dataProd,          cls: 'ms-prod',       icon: '\ud83d\ude80', label: 'Rilascio Prod',         always: true  },
-                { date: p.dataScadenzaStima, cls: 'ms-scad-stima', icon: '\ud83d\udce5', label: 'Scad. Stima Fornitore', always: false },
-                { date: p.dataConfigSistema, cls: 'ms-config-sis', icon: '\ud83d\udd27', label: 'Config Sistema',        always: false }
+                { date: p.dataIA,            cls: 'ms-ia',         icon: '🤖', label: 'Consegna IA',           always: true  },
+                { date: p.devStart,          cls: 'ms-dev-start',  icon: '▶️',  label: 'Inizio Sviluppo',       always: true  },
+                { date: p.devEnd,            cls: 'ms-dev-end',    icon: '⏹️',  label: 'Fine Sviluppo',         always: true  },
+                { date: p.dataUAT,           cls: 'ms-uat',        icon: '👥', label: 'UAT',                   always: false },
+                { date: p.dataBS,            cls: 'ms-bs',         icon: '💼', label: 'Business Simulation',   always: false },
+                { date: p.dataTest,          cls: 'ms-test',       icon: '🧪', label: 'Rilascio Test',         always: true  },
+                { date: p.dataProd,          cls: 'ms-prod',       icon: '🚀', label: 'Rilascio Prod',         always: true  },
+                { date: p.dataScadenzaStima, cls: 'ms-scad-stima', icon: '📥', label: 'Scad. Stima Fornitore', always: false },
+                { date: p.dataConfigSistema, cls: 'ms-config-sis', icon: '🔧', label: 'Config Sistema',        always: false }
             ].filter(m => m.date && m.date.trim() !== '');
 
             const dateGroups = {};
@@ -560,7 +563,7 @@ const app = {
                     <div class="gantt-project-col"><div><strong>${p.nome}</strong><div class="gantt-supplier-list">${badgesHtml}</div></div></div>
                     <div class="gantt-timeline-col" style="position:relative;">
                         <div class="gantt-bar" style="left:${leftPct.toFixed(2)}%;width:${widthPct.toFixed(2)}%;" title="Sviluppo: ${dayjs(p.devStart).format('DD/MM/YYYY')} - ${dayjs(p.devEnd).format('DD/MM/YYYY')}">
-                            <span>\u2699\ufe0f Sviluppo</span>
+                            <span>⚙️ Sviluppo</span>
                         </div>
                         ${milestonesHtml}
                     </div>
@@ -576,15 +579,15 @@ const app = {
         html += `
         <div class="gantt-legend">
             <div class="gantt-legend-item"><span class="legend-bar"></span> Fase di Sviluppo</div>
-            <div class="gantt-legend-item"><span class="legend-ms">\ud83e\udd16</span> Consegna IA</div>
-            <div class="gantt-legend-item"><span class="legend-ms">\u25b6\ufe0f</span> Inizio Sviluppo</div>
-            <div class="gantt-legend-item"><span class="legend-ms">\u23f9\ufe0f</span> Fine Sviluppo</div>
-            ${hasUAT       ? '<div class="gantt-legend-item"><span class="legend-ms">\ud83d\udc65</span> UAT</div>'                       : ''}
-            ${hasBS        ? '<div class="gantt-legend-item"><span class="legend-ms">\ud83d\udcbc</span> Business Simulation</div>'        : ''}
-            <div class="gantt-legend-item"><span class="legend-ms">\ud83e\uddea</span> Rilascio Test</div>
-            <div class="gantt-legend-item"><span class="legend-ms">\ud83d\ude80</span> Rilascio Prod</div>
-            ${hasScadStima ? '<div class="gantt-legend-item"><span class="legend-ms">\ud83d\udce5</span> Scad. Stima Fornitore</div>'     : ''}
-            ${hasConfigSis ? '<div class="gantt-legend-item"><span class="legend-ms">\ud83d\udd27</span> Config Sistema</div>'            : ''}
+            <div class="gantt-legend-item"><span class="legend-ms">🤖</span> Consegna IA</div>
+            <div class="gantt-legend-item"><span class="legend-ms">▶️</span> Inizio Sviluppo</div>
+            <div class="gantt-legend-item"><span class="legend-ms">⏹️</span> Fine Sviluppo</div>
+            ${hasUAT       ? '<div class="gantt-legend-item"><span class="legend-ms">👥</span> UAT</div>'                       : ''}
+            ${hasBS        ? '<div class="gantt-legend-item"><span class="legend-ms">💼</span> Business Simulation</div>'        : ''}
+            <div class="gantt-legend-item"><span class="legend-ms">🧪</span> Rilascio Test</div>
+            <div class="gantt-legend-item"><span class="legend-ms">🚀</span> Rilascio Prod</div>
+            ${hasScadStima ? '<div class="gantt-legend-item"><span class="legend-ms">📥</span> Scad. Stima Fornitore</div>'     : ''}
+            ${hasConfigSis ? '<div class="gantt-legend-item"><span class="legend-ms">🔧</span> Config Sistema</div>'            : ''}
         </div>`;
 
         html += '</div>';
