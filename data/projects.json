@@ -24,7 +24,8 @@
     "stimaGgu": 20,
     "rcFornitore": 400,
     "stimaCosto": 8000,
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772009744530",
@@ -51,7 +52,8 @@
     "stimaGgu": 10,
     "rcFornitore": 400,
     "stimaCosto": 4000,
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772009902765",
@@ -78,7 +80,8 @@
     "stimaGgu": 35,
     "rcFornitore": 400,
     "stimaCosto": 14000,
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772012800744",
@@ -105,7 +108,8 @@
     "stimaGgu": 10,
     "rcFornitore": 400,
     "stimaCosto": 4000,
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772014826609",
@@ -132,7 +136,8 @@
     "stimaGgu": 5,
     "rcFornitore": 364,
     "stimaCosto": 1820,
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772015383415",
@@ -160,7 +165,8 @@
     "stimaGgu": 40,
     "rcFornitore": 400,
     "stimaCosto": 16000,
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772015597105",
@@ -185,7 +191,8 @@
     "stimaGgu": 6,
     "rcFornitore": 364,
     "stimaCosto": 2184,
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772015731800",
@@ -212,7 +219,8 @@
     "stimaGgu": 12,
     "rcFornitore": 400,
     "stimaCosto": 4800,
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772017506539",
@@ -239,7 +247,8 @@
     "stimaGgu": 15,
     "rcFornitore": 364,
     "stimaCosto": 5460,
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772018580311",
@@ -268,7 +277,8 @@
     "stimaGgu": null,
     "rcFornitore": null,
     "stimaCosto": null,
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772019429452",
@@ -296,7 +306,8 @@
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "Ancora in attesa di un feedback da data platform",
-    "customMilestones": []
+    "customMilestones": [],
+    "hidden": true
   },
   {
     "id": "1772029183107",
@@ -329,6 +340,7 @@
     "stimaGgu": null,
     "rcFornitore": null,
     "stimaCosto": null,
-    "note": "Creare Story e richiedere pianificazione"
+    "note": "Creare Story e richiedere pianificazione",
+    "hidden": false
   }
 ]
