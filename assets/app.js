@@ -60,7 +60,8 @@ const app = {
         const owners    = this.csvToArray(p.owners || p.owner);
         const fornitori = this.csvToArray(p.fornitori);
         const customMilestones = Array.isArray(p.customMilestones) ? p.customMilestones : [];
-        return { ...p, owners, fornitori, customMilestones };
+        const hidden = !!p.hidden;
+        return { ...p, owners, fornitori, customMilestones, hidden };
     },
 
     // --- UTILITY COLORI BADGE ---
@@ -270,9 +271,7 @@ const app = {
             this.data = JSON.parse(decodeURIComponent(escape(atob(json.content)))).map(p => this.normalizeProject(p));
             this.populateFornitoreFilters();
             this.populateOwnerFilters();
-            this.renderTable();
-            this.renderGantt();
-            this.renderCalendar();
+            this.renderAll();
             this.showAlert('Dati aggiornati con successo!', 'success', 2000);
         } catch (error) {
             console.error(error);
@@ -365,9 +364,13 @@ const app = {
             stimaGgu:          isNaN(stimaGgu)    ? null : stimaGgu,
             rcFornitore:       isNaN(rcFornitore) ? null : rcFornitore,
             stimaCosto:        (!isNaN(stimaGgu) && !isNaN(rcFornitore)) ? stimaGgu * rcFornitore : null,
-            note:              document.getElementById('p_note').value
+            note:              document.getElementById('p_note').value,
+            hidden:            false // default quando creato nuovo, o sovrascritto se stiamo aggiornando
         };
+
         if (id) {
+            const oldProj = this.data.find(p => p.id === id);
+            if (oldProj && oldProj.hidden) newProj.hidden = true;
             this.data[this.data.findIndex(p => p.id === id)] = newProj;
         } else {
             this.data.push(newProj);
@@ -442,6 +445,14 @@ const app = {
         }
     },
 
+    toggleHidden: async function(id) {
+        const p = this.data.find(x => x.id === id);
+        if (p) {
+            p.hidden = !p.hidden;
+            await this.syncToGithub();
+        }
+    },
+
     _sortGantt: function(data, mode) {
         const today = new Date();
         today.setHours(0, 0, 0, 0);
@@ -506,17 +517,25 @@ const app = {
         return sorted;
     },
 
+    renderAll: function() {
+        this.renderTable();
+        this.renderGantt();
+        this.renderCalendar();
+    },
+
     renderTable: function() {
         const tbody    = document.getElementById('projectsTableBody');
         const search   = (document.getElementById('searchInput')?.value || '').toLowerCase();
         const filtForn = document.getElementById('tableFornitoreFilter')?.value || '';
         const filtOwn  = document.getElementById('tableOwnerFilter')?.value || '';
         const sortMode = document.getElementById('tableSortSelect')?.value || 'prod_inprogress_first';
+        const showHidden = document.getElementById('globalShowHidden')?.checked || false;
 
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
         let filtered = this.data.filter(p =>
+            (showHidden || !p.hidden) &&
             p.nome.toLowerCase().includes(search) &&
             (!filtForn || (p.fornitori && p.fornitori.includes(filtForn))) &&
             (!filtOwn  || (p.owners    && p.owners.includes(filtOwn)))
@@ -525,7 +544,12 @@ const app = {
 
         tbody.innerHTML = filtered.map(p => {
             const isPast = p.dataProd && new Date(p.dataProd) <= today;
-            const rowCls = isPast ? 'class="table-secondary opacity-75"' : '';
+            let rowCls = '';
+            if (p.hidden) {
+                rowCls = 'class="table-warning opacity-75"';
+            } else if (isPast) {
+                rowCls = 'class="table-secondary opacity-75"';
+            }
 
             const fornBadge = (p.fornitori || []).map(f => this._badgeSpan('supplier', f, 'badge me-1 mb-1')).join('');
             const ownBadge  = (p.owners    || []).map(o => this._badgeSpan('owner', o, 'badge me-1 mb-1')).join('');
@@ -537,11 +561,18 @@ const app = {
             const links = (p.jiraLinks && p.jiraLinks.length > 0) ? p.jiraLinks : (p.jira ? [p.jira] : []);
             const jiraHtml = this.jiraLinksHtml(links);
 
+            let statusBadge = '';
+            if (p.hidden) {
+                statusBadge = '<span class="badge bg-dark ms-1">🚫 Archiviato</span>';
+            } else if (isPast) {
+                statusBadge = '<span class="badge bg-success ms-1">✅ Rilasciato</span>';
+            }
+
             return `
             <tr ${rowCls}>
                 <td>
                     <strong>${p.nome}</strong>
-                    ${isPast ? '<span class="badge bg-success ms-1">✅ Rilasciato</span>' : ''}
+                    ${statusBadge}
                     ${jiraHtml ? `<div class="mt-1">${jiraHtml}</div>` : ''}
                     ${extraRows.length ? `<div class="mt-1">${extraRows.join('')}</div>` : ''}
                 </td>
@@ -556,8 +587,9 @@ const app = {
                 <td class="text-success small fw-bold">${this.formatDate(p.dataProd)}</td>
                 <td class="small text-muted" style="max-width: 250px; white-space: pre-wrap;">${p.note || ''}</td>
                 <td>
-                    <button class="btn btn-sm btn-outline-primary" onclick="app.openModal('${p.id}')">✏️</button>
-                    <button class="btn btn-sm btn-outline-danger" onclick="app.deleteProject('${p.id}')">🗑️</button>
+                    <button class="btn btn-sm ${p.hidden ? 'btn-secondary' : 'btn-outline-secondary'} mb-1" onclick="app.toggleHidden('${p.id}')" title="${p.hidden ? 'Ripristina Progetto' : 'Archivia (Nascondi)'}">${p.hidden ? '👁️' : '🚫'}</button>
+                    <button class="btn btn-sm btn-outline-primary mb-1" onclick="app.openModal('${p.id}')" title="Modifica">✏️</button>
+                    <button class="btn btn-sm btn-outline-danger mb-1" onclick="app.deleteProject('${p.id}')" title="Elimina">🗑️</button>
                 </td>
             </tr>`;
         }).join('');
@@ -570,10 +602,10 @@ const app = {
         const filtForn = document.getElementById('ganttFornitoreFilter')?.value || '';
         const filtOwn  = document.getElementById('ganttOwnerFilter')?.value || '';
         const sortMode = document.getElementById('ganttSortSelect')?.value || 'prod_inprogress_first';
+        const showHidden = document.getElementById('globalShowHidden')?.checked || false;
 
-        // Filtro per data: nascondi i progetti dal Gantt se NON hanno almeno una delle date essenziali (timeline principale + custom)
-        // Questo evita blocchi se il progetto è solo una bozza senza date
         let data = this.data.filter(p =>
+            (showHidden || !p.hidden) &&
             (!filtForn || (p.fornitori && p.fornitori.includes(filtForn))) &&
             (!filtOwn  || (p.owners    && p.owners.includes(filtOwn))) &&
             (p.devStart || p.devEnd || p.dataTest || p.dataProd || p.dataIA || (p.customMilestones && p.customMilestones.length > 0))
@@ -644,7 +676,8 @@ const app = {
             ].join('');
 
             const isPast = p.dataProd && new Date(p.dataProd) <= today;
-            const rowCls = isPast ? ' gantt-row--released' : '';
+            let rowCls = isPast ? ' gantt-row--released' : '';
+            if (p.hidden) rowCls += ' opacity-50'; // Opacizza i progetti archiviati
 
             let allMilestones = [
                 { date: p.dataIA,            cls: 'ms-ia',         icon: '🤖', label: 'Consegna IA',           always: true  },
@@ -692,7 +725,7 @@ const app = {
 
             html += `
                 <div class="gantt-row${rowCls}">
-                    <div class="gantt-project-col"><div><strong>${p.nome}</strong><div class="gantt-supplier-list">${badgesHtml}</div></div></div>
+                    <div class="gantt-project-col"><div><strong>${p.nome} ${p.hidden ? '<span class="badge bg-dark ms-1">🚫</span>' : ''}</strong><div class="gantt-supplier-list">${badgesHtml}</div></div></div>
                     <div class="gantt-timeline-col" style="position:relative;">
                         <div class="gantt-bar" style="left:${leftPct.toFixed(2)}%;width:${widthPct.toFixed(2)}%;opacity:${barOpacity};" title="Sviluppo: ${dayjs(startD).format('DD/MM/YYYY')} - ${dayjs(endD).format('DD/MM/YYYY')}">
                             <span>⚙️ Sviluppo</span>
@@ -735,6 +768,7 @@ const app = {
         const filtForn = document.getElementById('calendarFornitoreFilter')?.value || '';
         const filtOwn  = document.getElementById('calendarOwnerFilter')?.value    || '';
         const filtMile = document.getElementById('calendarMilestoneFilter')?.value || '';
+        const showHidden = document.getElementById('globalShowHidden')?.checked || false;
 
         const activeMilestones = filtMile && filtMile !== 'custom'
             ? this.MILESTONES.filter(m => m.key === filtMile)
@@ -743,6 +777,7 @@ const app = {
         const events = [];
         this.data
             .filter(p =>
+                (showHidden || !p.hidden) &&
                 (!filtForn || (p.fornitori && p.fornitori.includes(filtForn))) &&
                 (!filtOwn  || (p.owners    && p.owners.includes(filtOwn)))
             )
@@ -759,7 +794,8 @@ const app = {
                                 fornitori: p.fornitori || [],
                                 owners:    p.owners    || [],
                                 label:     m.label,
-                                badge:     m.badge
+                                badge:     m.badge,
+                                hidden:    p.hidden
                             });
                         }
                     });
@@ -776,7 +812,8 @@ const app = {
                                 fornitori: p.fornitori || [],
                                 owners:    p.owners    || [],
                                 label:     `⭐ ${cm.label}`,
-                                badge:     'bg-success' // colore verde
+                                badge:     'bg-success', // colore verde
+                                hidden:    p.hidden
                             });
                         }
                     });
@@ -806,12 +843,13 @@ const app = {
                             ${sorted.map(ev => {
                                 const fb = ev.fornitori.map(f => this._badgeSpan('supplier', f, 'gantt-supplier-badge mb-1')).join('');
                                 const ob = ev.owners.map(o    => this._badgeSpan('owner', o, 'gantt-supplier-badge mb-1')).join('');
+                                const opacityCls = ev.hidden ? 'opacity-50' : '';
                                 return `
-                                <div class="cal-event-item d-flex align-items-start gap-2 mb-2">
+                                <div class="cal-event-item d-flex align-items-start gap-2 mb-2 ${opacityCls}">
                                     <span class="cal-event-date">${ev.date.format('DD/MM')}</span>
                                     <div>
                                         <span class="badge ${ev.badge} me-1">${ev.label}</span>
-                                        <span class="small fw-semibold">${ev.nome}</span>
+                                        <span class="small fw-semibold">${ev.nome} ${ev.hidden ? '🚫' : ''}</span>
                                         ${fb || ob ? `<div class="cal-supplier-list mt-1">${fb}${ob}</div>` : ''}
                                     </div>
                                 </div>`;
