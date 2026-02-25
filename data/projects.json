@@ -155,5 +155,29 @@
     "stimaGgu": 40,
     "rcFornitore": 400,
     "stimaCosto": 16000
+  },
+  {
+    "id": "1772015597105",
+    "nome": "Abilitazione Carte di debito in onboarding G&G",
+    "fornitori": [
+      "Accenture"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "dataStima": "",
+    "dataIA": null,
+    "devStart": "2026-01-28",
+    "devEnd": "2026-02-10",
+    "dataTest": "2026-02-11",
+    "dataProd": "2026-03-10",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 6,
+    "rcFornitore": 364,
+    "stimaCosto": 2184
   }
 ]
