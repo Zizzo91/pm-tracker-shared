@@ -102,5 +102,27 @@
     "stimaGgu": 10,
     "rcFornitore": 400,
     "stimaCosto": 4000
+  },
+  {
+    "id": "1772014826609",
+    "nome": "",
+    "fornitori": [],
+    "owners": [],
+    "dataStima": "",
+    "dataIA": null,
+    "devStart": "2026-04-17",
+    "devEnd": "2026-04-23",
+    "dataTest": "2026-04-23",
+    "dataProd": "2026-07-15",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/COMPLIANCE-1807"
+    ],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 5,
+    "rcFornitore": 364,
+    "stimaCosto": 1820
   }
 ]
