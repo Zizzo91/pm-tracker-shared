@@ -105,9 +105,13 @@
   },
   {
     "id": "1772014826609",
-    "nome": "",
-    "fornitori": [],
-    "owners": [],
+    "nome": "Nuovo evento Iban check Mule",
+    "fornitori": [
+      "Accenture"
+    ],
+    "owners": [
+      "Simone"
+    ],
     "dataStima": "",
     "dataIA": null,
     "devStart": "2026-04-17",
