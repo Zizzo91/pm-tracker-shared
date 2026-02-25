@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "id": "1772009349631",
+    "nome": "Nuovo modello Sempre (DIRF1)",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "dataStima": "",
+    "dataIA": null,
+    "devStart": "2026-02-23",
+    "devEnd": "2026-03-20",
+    "dataTest": "2026-04-03",
+    "dataProd": "2026-05-05",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-2596"
+    ],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": "2026-03-03",
+    "stimaGgu": 20,
+    "rcFornitore": 400,
+    "stimaCosto": 8000
+  }
+]
