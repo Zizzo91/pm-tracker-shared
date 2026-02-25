@@ -23,7 +23,8 @@
     "dataConfigSistema": "2026-03-03",
     "stimaGgu": 20,
     "rcFornitore": 400,
-    "stimaCosto": 8000
+    "stimaCosto": 8000,
+    "customMilestones": []
   },
   {
     "id": "1772009744530",
@@ -49,7 +50,8 @@
     "dataConfigSistema": null,
     "stimaGgu": 10,
     "rcFornitore": 400,
-    "stimaCosto": 4000
+    "stimaCosto": 4000,
+    "customMilestones": []
   },
   {
     "id": "1772009902765",
@@ -75,7 +77,8 @@
     "dataConfigSistema": "2026-04-16",
     "stimaGgu": 35,
     "rcFornitore": 400,
-    "stimaCosto": 14000
+    "stimaCosto": 14000,
+    "customMilestones": []
   },
   {
     "id": "1772012800744",
@@ -101,7 +104,8 @@
     "dataConfigSistema": "2026-06-08",
     "stimaGgu": 10,
     "rcFornitore": 400,
-    "stimaCosto": 4000
+    "stimaCosto": 4000,
+    "customMilestones": []
   },
   {
     "id": "1772014826609",
@@ -127,7 +131,8 @@
     "dataConfigSistema": null,
     "stimaGgu": 5,
     "rcFornitore": 364,
-    "stimaCosto": 1820
+    "stimaCosto": 1820,
+    "customMilestones": []
   },
   {
     "id": "1772015383415",
@@ -154,7 +159,8 @@
     "dataConfigSistema": null,
     "stimaGgu": 40,
     "rcFornitore": 400,
-    "stimaCosto": 16000
+    "stimaCosto": 16000,
+    "customMilestones": []
   },
   {
     "id": "1772015597105",
@@ -178,7 +184,8 @@
     "dataConfigSistema": null,
     "stimaGgu": 6,
     "rcFornitore": 364,
-    "stimaCosto": 2184
+    "stimaCosto": 2184,
+    "customMilestones": []
   },
   {
     "id": "1772015731800",
@@ -204,7 +211,8 @@
     "dataConfigSistema": null,
     "stimaGgu": 12,
     "rcFornitore": 400,
-    "stimaCosto": 4800
+    "stimaCosto": 4800,
+    "customMilestones": []
   },
   {
     "id": "1772017506539",
@@ -230,7 +238,8 @@
     "dataConfigSistema": null,
     "stimaGgu": 15,
     "rcFornitore": 364,
-    "stimaCosto": 5460
+    "stimaCosto": 5460,
+    "customMilestones": []
   },
   {
     "id": "1772018580311",
@@ -258,7 +267,8 @@
     "dataConfigSistema": null,
     "stimaGgu": null,
     "rcFornitore": null,
-    "stimaCosto": null
+    "stimaCosto": null,
+    "customMilestones": []
   },
   {
     "id": "1772019429452",
@@ -285,7 +295,8 @@
     "stimaGgu": null,
     "rcFornitore": null,
     "stimaCosto": null,
-    "note": "Ancora in attesa di un feedback da data platform"
+    "note": "Ancora in attesa di un feedback da data platform",
+    "customMilestones": []
   },
   {
     "id": "1772029183107",
@@ -296,18 +307,24 @@
     "owners": [
       "Simone"
     ],
-    "dataStima": "",
+    "dataStima": null,
     "dataIA": null,
-    "devStart": "",
-    "devEnd": "",
-    "dataTest": "",
-    "dataProd": "",
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
       "https://telepass.atlassian.net/browse/MKTG-577"
     ],
-    "dataScadenzaStima": null,
+    "customMilestones": [
+      {
+        "label": "Creare story e richiedere pianificazione a ENG",
+        "date": "2026-02-27"
+      }
+    ],
+    "dataScadenzaStima": "2026-03-06",
     "dataConfigSistema": null,
     "stimaGgu": null,
     "rcFornitore": null,
