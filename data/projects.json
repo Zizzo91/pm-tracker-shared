@@ -284,5 +284,32 @@
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "Ancora in attesa di un feedback da data platform"
+  },
+  {
+    "id": "1772029183107",
+    "nome": "Domicilio onboarding sito",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "dataStima": "",
+    "dataIA": null,
+    "devStart": "",
+    "devEnd": "",
+    "dataTest": "",
+    "dataProd": "",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/MKTG-577"
+    ],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "Creare Story"
   }
 ]
