@@ -24,5 +24,31 @@
     "stimaGgu": 20,
     "rcFornitore": 400,
     "stimaCosto": 8000
+  },
+  {
+    "id": "1772009744530",
+    "nome": "Iban esteri in onboarding sito",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "dataStima": "",
+    "dataIA": null,
+    "devStart": "2026-03-23",
+    "devEnd": "2026-03-30",
+    "dataTest": "2026-03-31",
+    "dataProd": "2026-04-20",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/MKTG-538"
+    ],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 10,
+    "rcFornitore": 400,
+    "stimaCosto": 4000
   }
 ]
