@@ -12,7 +12,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">PM Tracker</a>
-        <div class="d-flex">
+        <div class="d-flex align-items-center">
+            <div class="form-check form-switch text-light me-3 mb-0 d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="globalShowHidden" onchange="app.renderAll()" style="cursor: pointer;">
+                <label class="form-check-label small mb-0 fw-semibold" for="globalShowHidden" style="cursor: pointer;">Mostra Archiviati</label>
+            </div>
             <button class="btn btn-outline-light btn-sm me-2" onclick="app.loadData()">🔄 Ricarica</button>
             <button class="btn btn-warning btn-sm" onclick="app.showSettings()">⚙️ Config</button>
         </div>
@@ -321,6 +325,6 @@
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/dayjs@1/locale/it.js"></script>
 <script>dayjs.locale('it');</script>
-<script src="assets/app.js?v=15"></script>
+<script src="assets/app.js?v=16"></script>
 </body>
 </html>
