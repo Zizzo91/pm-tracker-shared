@@ -10,6 +10,7 @@ const app = {
     editorModal: null,
     settingsModal: null,
     MAX_JIRA_LINKS: 10,
+    MAX_CUSTOM_MILESTONES: 5,
 
     MILESTONES: [
         { key: 'dataIA',            label: '🤖 Consegna IA',           badge: 'bg-info text-dark' },
@@ -58,7 +59,8 @@ const app = {
     normalizeProject: function(p) {
         const owners    = this.csvToArray(p.owners || p.owner);
         const fornitori = this.csvToArray(p.fornitori);
-        return { ...p, owners, fornitori };
+        const customMilestones = Array.isArray(p.customMilestones) ? p.customMilestones : [];
+        return { ...p, owners, fornitori, customMilestones };
     },
 
     // --- UTILITY COLORI BADGE ---
@@ -70,7 +72,6 @@ const app = {
     },
 
     _autoColor: function(name, kind) {
-        // Usa stringa univoca tipo+nome per sfalsare fornitori/owner con stesso nome
         const hue = this._hashString(`${kind}:${name}`) % 360;
         return { bg: `hsl(${hue}, 65%, 45%)`, fg: '#ffffff' };
     },
@@ -85,16 +86,71 @@ const app = {
 
     _badgeStyle: function(kind, name) {
         const c = this._badgeColor(kind, name);
-        // sovrascrive esplicitamente i gradienti CSS e fissa il colore testuale
         return `background: ${c.bg} !important; color: ${c.fg} !important; border: 1px solid rgba(0,0,0,0.12);`;
     },
 
     _badgeSpan: function(kind, name, className) {
         const safeName = (name ?? '').toString();
-        // uniamo il className con i nostri stili in linea
         return `<span class="${className}" style="${this._badgeStyle(kind, safeName)}">${safeName}</span>`;
     },
     // ----------------------------
+
+    // --- GESTIONE CUSTOM MILESTONES ---
+    renderCustomMilestoneFields: function(milestones) {
+        const container = document.getElementById('customMilestonesContainer');
+        container.innerHTML = '';
+        const items = (milestones && milestones.length > 0) ? milestones : [];
+        items.forEach((m, i) => this._appendCustomMilestoneField(m.label, m.date, i));
+        this._updateAddCustomMilestoneBtn();
+    },
+
+    _appendCustomMilestoneField: function(label, date, index) {
+        const container = document.getElementById('customMilestonesContainer');
+        const wrap = document.createElement('div');
+        wrap.className = 'd-flex align-items-center gap-2 mb-2 custom-milestone-row';
+        wrap.dataset.milestoneIndex = index;
+        wrap.innerHTML = `
+            <input type="text" class="form-control form-control-sm custom-ms-label" placeholder="Nome (es: Creare Story)" value="${label ? label.replace(/"/g, '&quot;') : ''}">
+            <input type="date" class="form-control form-control-sm custom-ms-date" value="${date || ''}">
+            <button type="button" class="btn btn-outline-danger btn-sm flex-shrink-0" onclick="app.removeCustomMilestone(this)" title="Rimuovi">&times;</button>
+        `;
+        container.appendChild(wrap);
+    },
+
+    addCustomMilestone: function() {
+        const container = document.getElementById('customMilestonesContainer');
+        const count = container.querySelectorAll('.custom-milestone-row').length;
+        if (count >= this.MAX_CUSTOM_MILESTONES) return;
+        this._appendCustomMilestoneField('', '', count);
+        this._updateAddCustomMilestoneBtn();
+    },
+
+    removeCustomMilestone: function(btn) {
+        btn.closest('.custom-milestone-row').remove();
+        this._updateAddCustomMilestoneBtn();
+    },
+
+    _updateAddCustomMilestoneBtn: function() {
+        const container = document.getElementById('customMilestonesContainer');
+        const btn = document.querySelector('button[onclick="app.addCustomMilestone()"]');
+        if (!btn) return;
+        const count = container.querySelectorAll('.custom-milestone-row').length;
+        btn.disabled = count >= this.MAX_CUSTOM_MILESTONES;
+        btn.textContent = count >= this.MAX_CUSTOM_MILESTONES
+            ? `Limite raggiunto (${this.MAX_CUSTOM_MILESTONES})`
+            : '+ Aggiungi Milestone Personalizzata';
+    },
+
+    _getCustomMilestonesFromModal: function() {
+        const rows = Array.from(document.querySelectorAll('.custom-milestone-row'));
+        return rows.map(row => {
+            return {
+                label: row.querySelector('.custom-ms-label').value.trim(),
+                date: row.querySelector('.custom-ms-date').value
+            };
+        }).filter(m => m.label !== '' && m.date !== '');
+    },
+    // ----------------------------------
 
     jiraLabel: function(url) {
         if (!url || !url.trim()) return '';
@@ -260,25 +316,25 @@ const app = {
 
     saveProject: async function() {
         const dates = {
-            stima:    document.getElementById('p_stima').value,
-            // IA è opzionale e senza vincoli di posizione nella sequenza
+            stima:    document.getElementById('p_stima').value || null,
             ia:       document.getElementById('p_ia').value || null,
-            devStart: document.getElementById('p_devStart').value,
-            devEnd:   document.getElementById('p_devEnd').value,
-            test:     document.getElementById('p_test').value,
-            prod:     document.getElementById('p_prod').value,
-            uat:      document.getElementById('p_uat').value  || null,
-            bs:       document.getElementById('p_bs').value   || null
+            devStart: document.getElementById('p_devStart').value || null,
+            devEnd:   document.getElementById('p_devEnd').value || null,
+            test:     document.getElementById('p_test').value || null,
+            prod:     document.getElementById('p_prod').value || null,
+            uat:      document.getElementById('p_uat').value || null,
+            bs:       document.getElementById('p_bs').value || null
         };
 
-        // Sequenza obbligatoria: Stima ≤ DevStart ≤ DevEnd ≤ Test ≤ Prod
-        // La data IA è libera (opzionale, nessun vincolo di ordine)
-        if (dates.stima > dates.devStart ||
-            dates.devStart > dates.devEnd ||
-            dates.devEnd   > dates.test   ||
-            dates.test     > dates.prod) {
-            document.getElementById('dateValidationMsg').innerText =
-                'ERRORE: La sequenza temporale non è rispettata! (Stima ≤ Dev Start ≤ Dev End ≤ Test ≤ Prod)';
+        // Check sequence solo se ENTRAMBE le date della coppia esistono
+        let errorMsg = '';
+        if (dates.stima && dates.devStart && dates.stima > dates.devStart) errorMsg = 'Stima non può essere successiva a Dev Start';
+        else if (dates.devStart && dates.devEnd && dates.devStart > dates.devEnd) errorMsg = 'Dev Start non può essere successivo a Dev End';
+        else if (dates.devEnd && dates.test && dates.devEnd > dates.test) errorMsg = 'Dev End non può essere successivo al Test';
+        else if (dates.test && dates.prod && dates.test > dates.prod) errorMsg = 'Il Test non può essere successivo a Prod';
+        
+        if (errorMsg) {
+            document.getElementById('dateValidationMsg').innerText = `ERRORE: ${errorMsg}`;
             return;
         }
 
@@ -303,6 +359,7 @@ const app = {
             dataUAT:           dates.uat,
             dataBS:            dates.bs,
             jiraLinks:         this._getJiraLinksFromModal(),
+            customMilestones:  this._getCustomMilestonesFromModal(),
             dataScadenzaStima: document.getElementById('p_dataScadenzaStima').value || null,
             dataConfigSistema: document.getElementById('p_dataConfigSistema').value || null,
             stimaGgu:          isNaN(stimaGgu)    ? null : stimaGgu,
@@ -366,13 +423,14 @@ const app = {
             document.getElementById('p_rcFornitore').value       = p.rcFornitore != null ? p.rcFornitore : '';
             document.getElementById('p_note').value              = p.note || '';
             this.calcCosto();
-            const links = p.jiraLinks && p.jiraLinks.length > 0
-                ? p.jiraLinks
-                : (p.jira ? [p.jira] : []);
+            
+            const links = p.jiraLinks && p.jiraLinks.length > 0 ? p.jiraLinks : (p.jira ? [p.jira] : []);
             this.renderJiraFields(links);
+            this.renderCustomMilestoneFields(p.customMilestones || []);
         } else {
             document.getElementById('p_id').value = '';
             this.renderJiraFields([]);
+            this.renderCustomMilestoneFields([]);
         }
         this.editorModal.show();
     },
@@ -513,14 +571,17 @@ const app = {
         const filtOwn  = document.getElementById('ganttOwnerFilter')?.value || '';
         const sortMode = document.getElementById('ganttSortSelect')?.value || 'prod_inprogress_first';
 
+        // Filtro per data: nascondi i progetti dal Gantt se NON hanno almeno una delle date essenziali (timeline principale + custom)
+        // Questo evita blocchi se il progetto è solo una bozza senza date
         let data = this.data.filter(p =>
             (!filtForn || (p.fornitori && p.fornitori.includes(filtForn))) &&
-            (!filtOwn  || (p.owners    && p.owners.includes(filtOwn)))
+            (!filtOwn  || (p.owners    && p.owners.includes(filtOwn))) &&
+            (p.devStart || p.devEnd || p.dataTest || p.dataProd || p.dataIA || (p.customMilestones && p.customMilestones.length > 0))
         );
         data = this._sortGantt(data, sortMode);
 
         if (data.length === 0) {
-            container.innerHTML = "<p class='text-center p-3 text-muted'>Nessun progetto da visualizzare per i filtri selezionati.</p>";
+            container.innerHTML = "<p class='text-center p-3 text-muted'>Nessun progetto con date programmate trovato per i filtri selezionati.</p>";
             return;
         }
 
@@ -534,7 +595,15 @@ const app = {
         data.forEach(p => {
             [p.dataIA, p.devStart, p.devEnd, p.dataTest, p.dataProd,
              p.dataUAT, p.dataBS, p.dataScadenzaStima, p.dataConfigSistema].forEach(updateRange);
+            if(p.customMilestones) {
+                p.customMilestones.forEach(m => updateRange(m.date));
+            }
         });
+
+        // Fallback nel caso in cui le date filtrate siano invalide
+        if (!minDate || !maxDate) {
+            minDate = new Date(); maxDate = new Date();
+        }
 
         minDate = new Date(minDate.getFullYear(), minDate.getMonth(), 1);
         let maxMonth = new Date(maxDate.getFullYear(), maxDate.getMonth() + 1, 0);
@@ -561,8 +630,13 @@ const app = {
         today.setHours(0, 0, 0, 0);
 
         data.forEach(p => {
-            const leftPct  = pct(p.devStart);
-            const widthPct = Math.max(pct(p.devEnd) - leftPct, 0.5);
+            // Se manca la barra di sviluppo, la disegno invisibile per non far sballare l'UI
+            const startD = p.devStart ? p.devStart : (p.dataTest || p.dataProd || p.dataIA);
+            const endD   = p.devEnd   ? p.devEnd   : startD;
+            
+            const leftPct  = startD ? pct(startD) : 0;
+            const widthPct = startD && endD ? Math.max(pct(endD) - leftPct, 0.5) : 0;
+            const barOpacity = (p.devStart && p.devEnd) ? 1 : 0.2;
 
             const badgesHtml = [
                 ...(p.fornitori || []).map(f => this._badgeSpan('supplier', f, 'gantt-supplier-badge mb-1')),
@@ -572,7 +646,7 @@ const app = {
             const isPast = p.dataProd && new Date(p.dataProd) <= today;
             const rowCls = isPast ? ' gantt-row--released' : '';
 
-            const allMilestones = [
+            let allMilestones = [
                 { date: p.dataIA,            cls: 'ms-ia',         icon: '🤖', label: 'Consegna IA',           always: true  },
                 { date: p.devStart,          cls: 'ms-dev-start',  icon: '▶️',  label: 'Inizio Sviluppo',       always: true  },
                 { date: p.devEnd,            cls: 'ms-dev-end',    icon: '⏹️',  label: 'Fine Sviluppo',         always: true  },
@@ -582,7 +656,21 @@ const app = {
                 { date: p.dataProd,          cls: 'ms-prod',       icon: '🚀', label: 'Rilascio Prod',         always: true  },
                 { date: p.dataScadenzaStima, cls: 'ms-scad-stima', icon: '📥', label: 'Scad. Stima Fornitore', always: false },
                 { date: p.dataConfigSistema, cls: 'ms-config-sis', icon: '🔧', label: 'Config Sistema',        always: false }
-            ].filter(m => m.date && m.date.trim() !== '');
+            ];
+
+            if (p.customMilestones) {
+                p.customMilestones.forEach(cm => {
+                    allMilestones.push({
+                        date: cm.date,
+                        cls: 'ms-custom',
+                        icon: '⭐',
+                        label: cm.label,
+                        always: false
+                    });
+                });
+            }
+
+            allMilestones = allMilestones.filter(m => m.date && m.date.trim() !== '');
 
             const dateGroups = {};
             allMilestones.forEach(m => { (dateGroups[m.date] = dateGroups[m.date] || []).push(m); });
@@ -593,10 +681,12 @@ const app = {
 
             const milestonesHtml = allMilestones.map(m => {
                 const translateX = (-16 + m.offsetPx).toFixed(0);
+                const inlineColor = m.cls === 'ms-custom' ? 'color:#198754;' : '';
+                const inlineLineColor = m.cls === 'ms-custom' ? 'background:#198754;' : '';
                 return `<div class="gantt-milestone ${m.cls}" style="left:${pct(m.date).toFixed(2)}%;transform:translateX(${translateX}px);" title="${m.label}: ${dayjs(m.date).format('DD/MM/YYYY')}">
-                    <span class="ms-date">${dayjs(m.date).format('DD/MM')}</span>
+                    <span class="ms-date" style="${inlineColor}">${dayjs(m.date).format('DD/MM')}</span>
                     <span class="ms-icon">${m.icon}</span>
-                    <span class="ms-line"></span>
+                    <span class="ms-line" style="${inlineLineColor}"></span>
                 </div>`;
             }).join('');
 
@@ -604,7 +694,7 @@ const app = {
                 <div class="gantt-row${rowCls}">
                     <div class="gantt-project-col"><div><strong>${p.nome}</strong><div class="gantt-supplier-list">${badgesHtml}</div></div></div>
                     <div class="gantt-timeline-col" style="position:relative;">
-                        <div class="gantt-bar" style="left:${leftPct.toFixed(2)}%;width:${widthPct.toFixed(2)}%;" title="Sviluppo: ${dayjs(p.devStart).format('DD/MM/YYYY')} - ${dayjs(p.devEnd).format('DD/MM/YYYY')}">
+                        <div class="gantt-bar" style="left:${leftPct.toFixed(2)}%;width:${widthPct.toFixed(2)}%;opacity:${barOpacity};" title="Sviluppo: ${dayjs(startD).format('DD/MM/YYYY')} - ${dayjs(endD).format('DD/MM/YYYY')}">
                             <span>⚙️ Sviluppo</span>
                         </div>
                         ${milestonesHtml}
@@ -617,6 +707,7 @@ const app = {
         const hasBS        = data.some(p => p.dataBS            && p.dataBS.trim()            !== '');
         const hasScadStima = data.some(p => p.dataScadenzaStima && p.dataScadenzaStima.trim() !== '');
         const hasConfigSis = data.some(p => p.dataConfigSistema && p.dataConfigSistema.trim() !== '');
+        const hasCustom    = data.some(p => p.customMilestones  && p.customMilestones.length  > 0);
 
         html += `
         <div class="gantt-legend">
@@ -630,6 +721,7 @@ const app = {
             <div class="gantt-legend-item"><span class="legend-ms">🚀</span> Rilascio Prod</div>
             ${hasScadStima ? '<div class="gantt-legend-item"><span class="legend-ms">📥</span> Scad. Stima Fornitore</div>'     : ''}
             ${hasConfigSis ? '<div class="gantt-legend-item"><span class="legend-ms">🔧</span> Config Sistema</div>'            : ''}
+            ${hasCustom    ? '<div class="gantt-legend-item"><span class="legend-ms" style="color:#198754">⭐</span> Milestone Personalizzate</div>'            : ''}
         </div>`;
 
         html += '</div>';
@@ -644,7 +736,7 @@ const app = {
         const filtOwn  = document.getElementById('calendarOwnerFilter')?.value    || '';
         const filtMile = document.getElementById('calendarMilestoneFilter')?.value || '';
 
-        const activeMilestones = filtMile
+        const activeMilestones = filtMile && filtMile !== 'custom'
             ? this.MILESTONES.filter(m => m.key === filtMile)
             : this.MILESTONES;
 
@@ -655,20 +747,40 @@ const app = {
                 (!filtOwn  || (p.owners    && p.owners.includes(filtOwn)))
             )
             .forEach(p => {
-                activeMilestones.forEach(m => {
-                    const v = p[m.key];
-                    if (v && v.trim() !== '') {
-                        events.push({
-                            date:      dayjs(v),
-                            sortKey:   v,
-                            nome:      p.nome,
-                            fornitori: p.fornitori || [],
-                            owners:    p.owners    || [],
-                            label:     m.label,
-                            badge:     m.badge
-                        });
-                    }
-                });
+                // Milestones standard
+                if (filtMile !== 'custom') {
+                    activeMilestones.forEach(m => {
+                        const v = p[m.key];
+                        if (v && v.trim() !== '') {
+                            events.push({
+                                date:      dayjs(v),
+                                sortKey:   v,
+                                nome:      p.nome,
+                                fornitori: p.fornitori || [],
+                                owners:    p.owners    || [],
+                                label:     m.label,
+                                badge:     m.badge
+                            });
+                        }
+                    });
+                }
+                
+                // Custom Milestones
+                if ((filtMile === '' || filtMile === 'custom') && p.customMilestones) {
+                    p.customMilestones.forEach(cm => {
+                        if (cm.date && cm.date.trim() !== '') {
+                            events.push({
+                                date:      dayjs(cm.date),
+                                sortKey:   cm.date,
+                                nome:      p.nome,
+                                fornitori: p.fornitori || [],
+                                owners:    p.owners    || [],
+                                label:     `⭐ ${cm.label}`,
+                                badge:     'bg-success' // colore verde
+                            });
+                        }
+                    });
+                }
             });
 
         if (events.length === 0) {
