@@ -128,5 +128,32 @@
     "stimaGgu": 5,
     "rcFornitore": 364,
     "stimaCosto": 1820
+  },
+  {
+    "id": "1772015383415",
+    "nome": "Risottomissione documenti Onfido da altri canali",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone",
+      "Andrea"
+    ],
+    "dataStima": "",
+    "dataIA": null,
+    "devStart": "2026-04-27",
+    "devEnd": "2026-06-04",
+    "dataTest": "2026-06-11",
+    "dataProd": "2026-06-23",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/SLF-4854"
+    ],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 40,
+    "rcFornitore": 400,
+    "stimaCosto": 16000
   }
 ]
