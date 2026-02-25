@@ -307,7 +307,7 @@
     "stimaCosto": null,
     "note": "Ancora in attesa di un feedback da data platform",
     "customMilestones": [],
-    "hidden": true
+    "hidden": false
   },
   {
     "id": "1772029183107",
