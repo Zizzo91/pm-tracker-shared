@@ -342,28 +342,5 @@
     "stimaCosto": null,
     "note": "Creare Story e richiedere pianificazione",
     "hidden": false
-  },
-  {
-    "id": "1772063919353",
-    "nome": "",
-    "fornitori": [],
-    "owners": [],
-    "dataStima": null,
-    "dataIA": null,
-    "devStart": null,
-    "devEnd": null,
-    "dataTest": null,
-    "dataProd": "2026-01-14",
-    "dataUAT": null,
-    "dataBS": null,
-    "jiraLinks": [],
-    "customMilestones": [],
-    "dataScadenzaStima": null,
-    "dataConfigSistema": null,
-    "stimaGgu": null,
-    "rcFornitore": null,
-    "stimaCosto": null,
-    "note": "",
-    "hidden": false
   }
 ]
