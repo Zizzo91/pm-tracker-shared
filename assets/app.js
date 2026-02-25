@@ -23,6 +23,13 @@ const app = {
         { key: 'dataConfigSistema', label: '🔧 Config Sistema',         badge: 'bg-light text-dark border' }
     ],
 
+    // Mappa colori manuale per owner specifici (chiavi in lowercase)
+    OWNER_COLORS: {
+        'simone': { bg: '#0d6efd', fg: '#ffffff' }, // blu
+        'flavia': { bg: '#6f42c1', fg: '#ffffff' }, // viola
+        'andrea': { bg: '#ffc107', fg: '#212529' }, // giallo
+    },
+
     init: function() {
         this.editorModal = new bootstrap.Modal(document.getElementById('editorModal'));
         this.settingsModal = new bootstrap.Modal(document.getElementById('settingsModal'));
@@ -53,6 +60,41 @@ const app = {
         const fornitori = this.csvToArray(p.fornitori);
         return { ...p, owners, fornitori };
     },
+
+    // --- UTILITY COLORI BADGE ---
+    _hashString: function(str) {
+        const s = (str || '').toString().trim().toLowerCase();
+        let h = 0;
+        for (let i = 0; i < s.length; i++) h = (Math.imul(31, h) + s.charCodeAt(i)) | 0;
+        return Math.abs(h);
+    },
+
+    _autoColor: function(name, kind) {
+        // Usa stringa univoca tipo+nome per sfalsare fornitori/owner con stesso nome
+        const hue = this._hashString(`${kind}:${name}`) % 360;
+        return { bg: `hsl(${hue}, 65%, 45%)`, fg: '#ffffff' };
+    },
+
+    _badgeColor: function(kind, name) {
+        const key = (name || '').toString().trim().toLowerCase();
+        if (kind === 'owner' && this.OWNER_COLORS[key]) {
+            return this.OWNER_COLORS[key];
+        }
+        return this._autoColor(name, kind);
+    },
+
+    _badgeStyle: function(kind, name) {
+        const c = this._badgeColor(kind, name);
+        // sovrascrive esplicitamente i gradienti CSS e fissa il colore testuale
+        return `background: ${c.bg} !important; color: ${c.fg} !important; border: 1px solid rgba(0,0,0,0.12);`;
+    },
+
+    _badgeSpan: function(kind, name, className) {
+        const safeName = (name ?? '').toString();
+        // uniamo il className con i nostri stili in linea
+        return `<span class="${className}" style="${this._badgeStyle(kind, safeName)}">${safeName}</span>`;
+    },
+    // ----------------------------
 
     jiraLabel: function(url) {
         if (!url || !url.trim()) return '';
@@ -427,8 +469,8 @@ const app = {
             const isPast = p.dataProd && new Date(p.dataProd) <= today;
             const rowCls = isPast ? 'class="table-secondary opacity-75"' : '';
 
-            const fornBadge = p.fornitori.map(f => `<span class="badge bg-secondary me-1">${f}</span>`).join('');
-            const ownBadge  = (p.owners || []).map(o => `<span class="badge bg-info text-dark me-1">${o}</span>`).join('');
+            const fornBadge = (p.fornitori || []).map(f => this._badgeSpan('supplier', f, 'badge me-1 mb-1')).join('');
+            const ownBadge  = (p.owners    || []).map(o => this._badgeSpan('owner', o, 'badge me-1 mb-1')).join('');
 
             const extraRows = [];
             if (p.stimaGgu   != null) extraRows.push(`<span class="badge bg-info text-dark me-1">⏱️ ${p.stimaGgu} gg/u</span>`);
@@ -446,8 +488,8 @@ const app = {
                     ${extraRows.length ? `<div class="mt-1">${extraRows.join('')}</div>` : ''}
                 </td>
                 <td>
-                    <div>${fornBadge}</div>
-                    ${ownBadge ? `<div class="mt-1">${ownBadge}</div>` : ''}
+                    <div class="d-flex flex-wrap">${fornBadge}</div>
+                    ${ownBadge ? `<div class="mt-1 d-flex flex-wrap">${ownBadge}</div>` : ''}
                 </td>
                 <td class="text-muted small">${this.formatDate(p.dataStima)}</td>
                 <td class="text-muted small">${this.formatDate(p.dataIA)}</td>
@@ -523,8 +565,8 @@ const app = {
             const widthPct = Math.max(pct(p.devEnd) - leftPct, 0.5);
 
             const badgesHtml = [
-                ...(p.fornitori || []).map(f => `<span class="gantt-supplier-badge">${f}</span>`),
-                ...(p.owners    || []).map(o => `<span class="gantt-supplier-badge bg-info text-dark">${o}</span>`)
+                ...(p.fornitori || []).map(f => this._badgeSpan('supplier', f, 'gantt-supplier-badge mb-1')),
+                ...(p.owners    || []).map(o => this._badgeSpan('owner', o, 'gantt-supplier-badge mb-1'))
             ].join('');
 
             const isPast = p.dataProd && new Date(p.dataProd) <= today;
@@ -650,8 +692,8 @@ const app = {
                         <div class="card-header bg-white fw-bold text-uppercase text-primary">${g.label}</div>
                         <div class="card-body">
                             ${sorted.map(ev => {
-                                const fb = ev.fornitori.map(f => `<span class="gantt-supplier-badge">${f}</span>`).join('');
-                                const ob = ev.owners.map(o    => `<span class="gantt-supplier-badge bg-info text-dark">${o}</span>`).join('');
+                                const fb = ev.fornitori.map(f => this._badgeSpan('supplier', f, 'gantt-supplier-badge mb-1')).join('');
+                                const ob = ev.owners.map(o    => this._badgeSpan('owner', o, 'gantt-supplier-badge mb-1')).join('');
                                 return `
                                 <div class="cal-event-item d-flex align-items-start gap-2 mb-2">
                                     <span class="cal-event-date">${ev.date.format('DD/MM')}</span>
