@@ -282,6 +282,7 @@
     "dataConfigSistema": null,
     "stimaGgu": null,
     "rcFornitore": null,
-    "stimaCosto": null
+    "stimaCosto": null,
+    "note": "Ancora in attesa di un feedback da data platform"
   }
 ]
