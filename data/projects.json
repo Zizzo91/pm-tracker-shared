@@ -179,5 +179,31 @@
     "stimaGgu": 6,
     "rcFornitore": 364,
     "stimaCosto": 2184
+  },
+  {
+    "id": "1772015731800",
+    "nome": "Piano Vignette GoByTLP",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Andrea"
+    ],
+    "dataStima": "",
+    "dataIA": null,
+    "devStart": "2026-02-02",
+    "devEnd": "2026-02-12",
+    "dataTest": "2026-02-13",
+    "dataProd": "2026-04-20",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/GBT2-78"
+    ],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 12,
+    "rcFornitore": 400,
+    "stimaCosto": 4800
   }
 ]
