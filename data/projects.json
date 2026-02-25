@@ -259,5 +259,29 @@
     "stimaGgu": null,
     "rcFornitore": null,
     "stimaCosto": null
+  },
+  {
+    "id": "1772019429452",
+    "nome": "Carrelli abbandonati",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "dataStima": "",
+    "dataIA": null,
+    "devStart": "",
+    "devEnd": "",
+    "dataTest": "",
+    "dataProd": "",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null
   }
 ]
