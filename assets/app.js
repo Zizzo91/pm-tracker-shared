@@ -68,6 +68,28 @@ const app = {
         return { ...p, owners, fornitori, customMilestones, hidden };
     },
 
+    isAutoStale: function(p) {
+        try {
+            if (p.hidden) return false;
+            if (!p.dataProd || p.dataProd.trim() === '') return false;
+            const prodDate = new Date(p.dataProd);
+            if (isNaN(prodDate.getTime())) return false;
+            
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            const oneMonthAgo = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+            
+            return prodDate < oneMonthAgo;
+        } catch (e) {
+            console.error("Errore in isAutoStale:", e);
+            return false;
+        }
+    },
+
+    isHiddenForUI: function(p) {
+        return p.hidden || this.isAutoStale(p);
+    },
+
     _hashString: function(str) {
         const s = (str || '').toString().trim().toLowerCase();
         let h = 0;
@@ -459,6 +481,9 @@ const app = {
         const p = this.data.find(x => x.id === id);
         if (p) {
             p.hidden = !p.hidden;
+            if (!p.hidden && this.isAutoStale(p)) {
+                this.showAlert('Progetto ripristinato, ma è vecchio di 1 mese. Rimuovi o modifica la data di Prod per renderlo visibile senza la spunta.', 'warning', 6000);
+            }
             await this.syncToGithub();
         }
     },
@@ -550,7 +575,7 @@ const app = {
         today.setHours(0, 0, 0, 0);
 
         let filtered = this.data.filter(p =>
-            (showHidden || !p.hidden) &&
+            (showHidden || !this.isHiddenForUI(p)) &&
             (p.nome || '').toLowerCase().includes(search) &&
             (!filtForn || (p.fornitori && p.fornitori.includes(filtForn))) &&
             (!filtOwn  || (p.owners    && p.owners.includes(filtOwn)))
@@ -559,8 +584,11 @@ const app = {
 
         tbody.innerHTML = filtered.map(p => {
             const isPast = p.dataProd && new Date(p.dataProd) <= today;
+            const autoStale = this.isAutoStale(p);
+            const currentlyHidden = this.isHiddenForUI(p);
+
             let rowCls = '';
-            if (p.hidden) {
+            if (currentlyHidden) {
                 rowCls = 'class="table-warning opacity-75"';
             } else if (isPast) {
                 rowCls = 'class="table-secondary opacity-75"';
@@ -579,6 +607,8 @@ const app = {
             let statusBadge = '';
             if (p.hidden) {
                 statusBadge = '<span class="badge bg-dark ms-1">🚫 Archiviato</span>';
+            } else if (autoStale) {
+                statusBadge = '<span class="badge bg-secondary ms-1">🕐 Auto-archiviato</span>';
             } else if (isPast) {
                 statusBadge = '<span class="badge bg-success ms-1">✅ Rilasciato</span>';
             }
@@ -620,7 +650,7 @@ const app = {
         const showHidden = document.getElementById('globalShowHidden')?.checked || false;
 
         let data = this.data.filter(p =>
-            (showHidden || !p.hidden) &&
+            (showHidden || !this.isHiddenForUI(p)) &&
             (!filtForn || (p.fornitori && p.fornitori.includes(filtForn))) &&
             (!filtOwn  || (p.owners    && p.owners.includes(filtOwn))) &&
             (p.devStart || p.devEnd || p.dataTest || p.dataProd || p.dataIA || (p.customMilestones && p.customMilestones.length > 0))
@@ -689,10 +719,15 @@ const app = {
             ].join('');
 
             const isPast = p.dataProd && new Date(p.dataProd) <= today;
-            let rowCls = isPast ? ' gantt-row--released' : '';
-            if (p.hidden) rowCls += ' opacity-50';
+            const autoStale = this.isAutoStale(p);
+            const currentlyHidden = this.isHiddenForUI(p);
 
-            let statusIcon = p.hidden ? '<span class="badge bg-dark ms-1">🚫</span>' : '';
+            let rowCls = isPast ? ' gantt-row--released' : '';
+            if (currentlyHidden) rowCls += ' opacity-50';
+
+            let statusIcon = '';
+            if (p.hidden) statusIcon = '<span class="badge bg-dark ms-1">🚫</span>';
+            else if (autoStale) statusIcon = '<span class="badge bg-secondary ms-1" title="Auto-archiviato">🕐</span>';
 
             let allMilestones = [
                 { date: p.dataIA,            cls: 'ms-ia',         icon: '🤖', label: 'Consegna IA',           always: true  },
@@ -792,11 +827,14 @@ const app = {
         const events = [];
         this.data
             .filter(p =>
-                (showHidden || !p.hidden) &&
+                (showHidden || !this.isHiddenForUI(p)) &&
                 (!filtForn || (p.fornitori && p.fornitori.includes(filtForn))) &&
                 (!filtOwn  || (p.owners    && p.owners.includes(filtOwn)))
             )
             .forEach(p => {
+                const currentlyHidden = this.isHiddenForUI(p);
+                const autoStale = this.isAutoStale(p);
+                
                 if (filtMile !== 'custom') {
                     activeMilestones.forEach(m => {
                         const v = p[m.key];
@@ -809,7 +847,9 @@ const app = {
                                 owners:    p.owners    || [],
                                 label:     m.label,
                                 badge:     m.badge,
-                                hidden:    p.hidden
+                                manual:    p.hidden,
+                                autoStale: autoStale,
+                                hidden:    currentlyHidden
                             });
                         }
                     });
@@ -826,7 +866,9 @@ const app = {
                                 owners:    p.owners    || [],
                                 label:     `⭐ ${cm.label}`,
                                 badge:     'bg-success',
-                                hidden:    p.hidden
+                                manual:    p.hidden,
+                                autoStale: autoStale,
+                                hidden:    currentlyHidden
                             });
                         }
                     });
@@ -857,12 +899,17 @@ const app = {
                                 const fb = ev.fornitori.map(f => this._badgeSpan('supplier', f, 'gantt-supplier-badge mb-1')).join('');
                                 const ob = ev.owners.map(o    => this._badgeSpan('owner', o, 'gantt-supplier-badge mb-1')).join('');
                                 const opacityCls = ev.hidden ? 'opacity-50' : '';
+                                
+                                let statusIcon = '';
+                                if (ev.manual) statusIcon = '🚫';
+                                else if (ev.autoStale) statusIcon = '<span title="Auto-archiviato">🕐</span>';
+                                
                                 return `
                                 <div class="cal-event-item d-flex align-items-start gap-2 mb-2 ${opacityCls}">
                                     <span class="cal-event-date">${ev.date.format('DD/MM')}</span>
                                     <div>
                                         <span class="badge ${ev.badge} me-1">${ev.label}</span>
-                                        <span class="small fw-semibold">${ev.nome} ${ev.hidden ? '🚫' : ''}</span>
+                                        <span class="small fw-semibold">${ev.nome} ${statusIcon}</span>
                                         ${fb || ob ? `<div class="cal-supplier-list mt-1">${fb}${ob}</div>` : ''}
                                     </div>
                                 </div>`;
