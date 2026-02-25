@@ -238,7 +238,9 @@
     "fornitori": [
       "Engineering"
     ],
-    "owners": [],
+    "owners": [
+      "Simone"
+    ],
     "dataStima": "",
     "dataIA": null,
     "devStart": "",
