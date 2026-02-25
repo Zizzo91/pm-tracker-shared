@@ -76,5 +76,31 @@
     "stimaGgu": 35,
     "rcFornitore": 400,
     "stimaCosto": 14000
+  },
+  {
+    "id": "1772012800744",
+    "nome": "Nuovo evento iban check",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "dataStima": "",
+    "dataIA": null,
+    "devStart": "2026-06-08",
+    "devEnd": "2026-06-15",
+    "dataTest": "2026-06-16",
+    "dataProd": "2026-07-15",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/COMPLIANCE-1805"
+    ],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": "2026-06-08",
+    "stimaGgu": 10,
+    "rcFornitore": 400,
+    "stimaCosto": 4000
   }
 ]
