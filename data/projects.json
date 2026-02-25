@@ -231,5 +231,31 @@
     "stimaGgu": 15,
     "rcFornitore": 364,
     "stimaCosto": 5460
+  },
+  {
+    "id": "1772018580311",
+    "nome": "ZTL",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [],
+    "dataStima": "",
+    "dataIA": null,
+    "devStart": "",
+    "devEnd": "",
+    "dataTest": "",
+    "dataProd": "2026-03-10",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/ZTL-131",
+      "https://telepass.atlassian.net/browse/ZTL-257",
+      "https://telepass.atlassian.net/browse/ZTL-265"
+    ],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null
   }
 ]
