@@ -289,12 +289,12 @@
     "owners": [
       "Simone"
     ],
-    "dataStima": null,
+    "dataStima": "2026-03-05",
     "dataIA": null,
     "devStart": null,
     "devEnd": null,
     "dataTest": null,
-    "dataProd": "2026-01-07",
+    "dataProd": null,
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
