@@ -259,11 +259,11 @@
     "owners": [
       "Simone"
     ],
-    "dataStima": "",
+    "dataStima": null,
     "dataIA": null,
-    "devStart": "",
-    "devEnd": "",
-    "dataTest": "",
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": "2026-02-25",
     "dataProd": "2026-03-10",
     "dataUAT": null,
     "dataBS": null,
@@ -272,12 +272,13 @@
       "https://telepass.atlassian.net/browse/ZTL-257",
       "https://telepass.atlassian.net/browse/ZTL-265"
     ],
+    "customMilestones": [],
     "dataScadenzaStima": null,
     "dataConfigSistema": null,
     "stimaGgu": null,
     "rcFornitore": null,
     "stimaCosto": null,
-    "customMilestones": [],
+    "note": "",
     "hidden": false
   },
   {
