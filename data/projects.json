@@ -289,24 +289,24 @@
     "owners": [
       "Simone"
     ],
-    "dataStima": "",
+    "dataStima": null,
     "dataIA": null,
-    "devStart": "",
-    "devEnd": "",
-    "dataTest": "",
-    "dataProd": "",
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": "2026-01-07",
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
       "https://telepass.atlassian.net/browse/DPS-2647"
     ],
+    "customMilestones": [],
     "dataScadenzaStima": null,
     "dataConfigSistema": null,
     "stimaGgu": null,
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "Ancora in attesa di un feedback da data platform",
-    "customMilestones": [],
     "hidden": false
   },
   {
