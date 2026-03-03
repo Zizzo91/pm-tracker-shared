@@ -375,6 +375,9 @@
         "createdAt": "2026-03-03T11:11:14.182Z",
         "doneAt": null
       }
-    ]
+    ],
+    "eventPrefs": {
+      "ms_1772015731800_devStart": "gray"
+    }
   }
 ]
