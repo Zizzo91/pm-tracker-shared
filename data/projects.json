@@ -365,6 +365,15 @@
         "done": false,
         "createdAt": "2026-03-03T10:35:20.968Z",
         "doneAt": null
+      },
+      {
+        "id": "1772536274182",
+        "date": "2026-03-03",
+        "title": "Chiedere ad Andrea chi e come estrarre i dati di revolut per metterli nella coda giusta",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-03-03T11:11:14.182Z",
+        "doneAt": null
       }
     ]
   }
