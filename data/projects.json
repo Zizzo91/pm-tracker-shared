@@ -420,5 +420,37 @@
       "ms_1772009349631_dataConfigSistema": "gray",
       "ms_1772015597105_devStart": "hide"
     }
+  },
+  {
+    "id": "1772720469095",
+    "nome": "Nuovo Plus/Gold",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "dataStima": null,
+    "dataIA": "2026-03-10",
+    "devStart": "2026-03-09",
+    "devEnd": "2026-05-15",
+    "dataTest": "2026-05-29",
+    "dataProd": "2026-07-15",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/TELPISO-8084",
+      "https://telepass.atlassian.net/browse/TELPISO-8072",
+      "https://telepass.atlassian.net/browse/TELPISO-8021",
+      "https://telepass.atlassian.net/browse/TELPISO-8016"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "in attesa di stime per la parte di NOTE spese su sito. Alcune cose, tipo kostelia, arriveranno dopo.",
+    "hidden": false
   }
 ]
