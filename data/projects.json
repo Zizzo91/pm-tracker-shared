@@ -417,7 +417,8 @@
       "ms_1772015597105_dataTest": "gray",
       "ms_1772015731800_devEnd": "gray",
       "ms_1772017506539_dataScadenzaStima": "hide",
-      "ms_1772009349631_dataConfigSistema": "gray"
+      "ms_1772009349631_dataConfigSistema": "gray",
+      "ms_1772015597105_devStart": "hide"
     }
   }
 ]
