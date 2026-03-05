@@ -361,9 +361,9 @@
         "date": "2026-03-05",
         "title": "Fare flusso Rate",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-03-05T08:39:33.088Z",
-        "doneAt": null
+        "doneAt": "2026-03-05T13:59:30.413Z"
       },
       {
         "id": "1772699983833",
