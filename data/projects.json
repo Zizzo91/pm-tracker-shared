@@ -379,9 +379,9 @@
         "date": "2026-03-05",
         "title": "Dire a Flavia di mulesoft a fine maggio",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-03-05T08:39:54.204Z",
-        "doneAt": null
+        "doneAt": "2026-03-05T13:59:34.009Z"
       }
     ],
     "eventPrefs": {
