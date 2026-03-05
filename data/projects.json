@@ -447,9 +447,9 @@
     "customMilestones": [],
     "dataScadenzaStima": null,
     "dataConfigSistema": null,
-    "stimaGgu": null,
-    "rcFornitore": null,
-    "stimaCosto": null,
+    "stimaGgu": 95,
+    "rcFornitore": 400,
+    "stimaCosto": 38000,
     "note": "in attesa di stime per la parte di NOTE spese su sito. Alcune cose, tipo kostelia, arriveranno dopo.",
     "hidden": false
   }
