@@ -293,27 +293,22 @@
     ],
     "dataStima": null,
     "dataIA": null,
-    "devStart": null,
-    "devEnd": null,
-    "dataTest": null,
-    "dataProd": null,
+    "devStart": "2026-05-25",
+    "devEnd": "2026-06-22",
+    "dataTest": "2026-06-23",
+    "dataProd": "2026-07-15",
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
       "https://telepass.atlassian.net/browse/MKTG-577"
     ],
-    "customMilestones": [
-      {
-        "label": "Creare story e richiedere pianificazione a ENG",
-        "date": "2026-02-27"
-      }
-    ],
+    "customMilestones": [],
     "dataScadenzaStima": "2026-03-06",
     "dataConfigSistema": null,
-    "stimaGgu": null,
-    "rcFornitore": null,
-    "stimaCosto": null,
-    "note": "Aperta story, in attesa stime",
+    "stimaGgu": 25,
+    "rcFornitore": 400,
+    "stimaCosto": 10000,
+    "note": "",
     "hidden": false
   },
   {
