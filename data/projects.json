@@ -413,6 +413,15 @@
         "done": false,
         "createdAt": "2026-03-09T16:35:52.089Z",
         "doneAt": null
+      },
+      {
+        "id": "1773074171772",
+        "date": "2026-03-16",
+        "title": "Chiedere ad Alessandro Bertipagani chi ha i documenti (contratto-precontratto)",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-03-09T16:36:11.772Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
