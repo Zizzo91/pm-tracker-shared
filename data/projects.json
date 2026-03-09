@@ -413,6 +413,15 @@
         "done": false,
         "createdAt": "2026-03-09T13:37:11.213Z",
         "doneAt": null
+      },
+      {
+        "id": "1773074152089",
+        "date": "2026-03-10",
+        "title": "Chiedere ad Andrea di food&drink",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-03-09T16:35:52.089Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
