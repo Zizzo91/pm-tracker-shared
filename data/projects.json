@@ -415,6 +415,15 @@
         "doneAt": "2026-03-10T16:26:56.188Z"
       },
       {
+        "id": "1773160035987",
+        "date": "2026-03-11",
+        "title": "Fornire customerCode a Peruggini",
+        "note": "Io ho capito solo impatti contentful, lei dice che tu gli hai detto impatti su BE.",
+        "done": false,
+        "createdAt": "2026-03-10T16:27:15.987Z",
+        "doneAt": null
+      },
+      {
         "id": "1773074171772",
         "date": "2026-03-16",
         "title": "Chiedere ad Alessandro Bertipagani chi ha i documenti (contratto-precontratto)",
