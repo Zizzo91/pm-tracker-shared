@@ -410,9 +410,9 @@
         "date": "2026-03-10",
         "title": "Chiedere ad Andrea di food&drink",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-03-09T16:35:52.089Z",
-        "doneAt": null
+        "doneAt": "2026-03-10T16:26:56.188Z"
       },
       {
         "id": "1773074171772",
