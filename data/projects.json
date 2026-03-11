@@ -461,6 +461,15 @@
         "doneAt": "2026-03-11T15:31:32.954Z"
       },
       {
+        "id": "1773243506849",
+        "date": "2026-03-12",
+        "title": "attesa risposta da Giacomo per TPay X PagoPA",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-03-11T15:38:26.849Z",
+        "doneAt": null
+      },
+      {
         "id": "1773236204864",
         "date": "2026-03-13",
         "title": "Preparare query per SR per pagoPA",
