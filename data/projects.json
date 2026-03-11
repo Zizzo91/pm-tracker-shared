@@ -538,5 +538,34 @@
     "stimaCosto": 38000,
     "note": "in attesa di stime per la parte di NOTE spese su sito. Alcune cose, tipo kostelia, arriveranno dopo.",
     "hidden": false
+  },
+  {
+    "id": "1773244674453",
+    "nome": "Revolut su code PEGA",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-02-26",
+    "devEnd": "2026-03-06",
+    "dataTest": "2026-03-06",
+    "dataProd": "2026-04-20",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-2765"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 6,
+    "rcFornitore": 400,
+    "stimaCosto": 2400,
+    "note": "",
+    "hidden": false
   }
 ]
