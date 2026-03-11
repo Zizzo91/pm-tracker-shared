@@ -456,9 +456,9 @@
         "date": "2026-03-11",
         "title": "Dire a Fabiola di pagopa",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-03-11T13:59:27.381Z",
-        "doneAt": null
+        "doneAt": "2026-03-11T15:31:32.954Z"
       },
       {
         "id": "1773236204864",
