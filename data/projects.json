@@ -420,9 +420,9 @@
         "date": "2026-03-11",
         "title": "Fornire customerCode a Peruggini",
         "note": "Io ho capito solo impatti contentful, lei dice che tu gli hai detto impatti su BE.",
-        "done": false,
+        "done": true,
         "createdAt": "2026-03-10T16:27:15.987Z",
-        "doneAt": null
+        "doneAt": "2026-03-11T09:38:47.050Z"
       },
       {
         "id": "1773221918905",
