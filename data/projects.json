@@ -447,9 +447,9 @@
         "date": "2026-03-11",
         "title": "Vedere differenza tra v1 e v2 di attiva servizi",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-03-11T13:50:29.228Z",
-        "doneAt": null
+        "doneAt": "2026-03-11T15:31:36.855Z"
       },
       {
         "id": "1773237567381",
