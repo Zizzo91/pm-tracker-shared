@@ -470,6 +470,15 @@
         "doneAt": null
       },
       {
+        "id": "1773247616685",
+        "date": "2026-03-12",
+        "title": "Scrivere a Sara e Andrea Ciambella per il problema di targa1",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-03-11T16:46:56.685Z",
+        "doneAt": null
+      },
+      {
         "id": "1773236204864",
         "date": "2026-03-13",
         "title": "Preparare query per SR per pagoPA",
