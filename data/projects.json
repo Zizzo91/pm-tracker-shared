@@ -443,6 +443,15 @@
         "doneAt": null
       },
       {
+        "id": "1773236204864",
+        "date": "2026-03-13",
+        "title": "Preparare query per SR per pagoPA",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-03-11T13:36:44.864Z",
+        "doneAt": null
+      },
+      {
         "id": "1773074171772",
         "date": "2026-03-16",
         "title": "Chiedere ad Alessandro Bertipagani chi ha i documenti (contratto-precontratto)",
