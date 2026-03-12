@@ -501,10 +501,11 @@
         "id": "1773074171772",
         "date": "2026-03-16",
         "title": "Chiedere ad Alessandro Bertipagani chi ha i documenti (contratto-precontratto)",
-        "note": "",
+        "note": "Per TPay X",
         "done": false,
         "createdAt": "2026-03-09T16:36:11.772Z",
-        "doneAt": null
+        "doneAt": null,
+        "updatedAt": "2026-03-12T11:21:26.089Z"
       }
     ],
     "eventPrefs": {
