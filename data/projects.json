@@ -471,16 +471,6 @@
         "updatedAt": "2026-03-12T11:21:36.639Z"
       },
       {
-        "id": "1773234602689",
-        "date": "2026-03-13",
-        "title": "rispondere a olivieri",
-        "note": "",
-        "done": false,
-        "createdAt": "2026-03-11T13:10:02.689Z",
-        "doneAt": null,
-        "updatedAt": "2026-03-12T11:21:13.855Z"
-      },
-      {
         "id": "1773236204864",
         "date": "2026-03-13",
         "title": "Preparare query per SR per pagoPA",
@@ -516,6 +506,16 @@
         "createdAt": "2026-03-09T16:36:11.772Z",
         "doneAt": null,
         "updatedAt": "2026-03-12T11:21:26.089Z"
+      },
+      {
+        "id": "1773234602689",
+        "date": "2026-03-20",
+        "title": "rispondere a olivieri",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-03-11T13:10:02.689Z",
+        "doneAt": null,
+        "updatedAt": "2026-03-13T15:20:58.765Z"
       }
     ],
     "eventPrefs": {
