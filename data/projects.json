@@ -475,9 +475,9 @@
         "date": "2026-03-13",
         "title": "fare macrostima per shopping cart",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-03-11T14:06:03.026Z",
-        "doneAt": null
+        "doneAt": "2026-03-13T16:03:26.189Z"
       },
       {
         "id": "1773399988839",
