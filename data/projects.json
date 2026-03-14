@@ -26,7 +26,8 @@
     "rcFornitore": 400,
     "stimaCosto": 8000,
     "note": "",
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1772009744530",
@@ -54,7 +55,8 @@
     "rcFornitore": 400,
     "stimaCosto": 4000,
     "customMilestones": [],
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1772009902765",
@@ -82,7 +84,8 @@
     "rcFornitore": 400,
     "stimaCosto": 14000,
     "customMilestones": [],
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1772012800744",
@@ -110,7 +113,8 @@
     "rcFornitore": 400,
     "stimaCosto": 4000,
     "customMilestones": [],
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1772014826609",
@@ -138,7 +142,8 @@
     "rcFornitore": 364,
     "stimaCosto": 1820,
     "customMilestones": [],
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1772015383415",
@@ -167,7 +172,8 @@
     "rcFornitore": 400,
     "stimaCosto": 16000,
     "customMilestones": [],
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1772015597105",
@@ -193,7 +199,8 @@
     "rcFornitore": 364,
     "stimaCosto": 2184,
     "customMilestones": [],
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1772015731800",
@@ -221,7 +228,8 @@
     "rcFornitore": 400,
     "stimaCosto": 4800,
     "customMilestones": [],
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1772018580311",
@@ -252,7 +260,8 @@
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "",
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1772019429452",
@@ -281,7 +290,8 @@
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "Ancora in attesa di un feedback da data platform",
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1772029183107",
@@ -310,7 +320,8 @@
     "rcFornitore": 400,
     "stimaCosto": 10000,
     "note": "",
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "__pm_tracker_meta__",
@@ -537,7 +548,8 @@
       "ms_1772015731800_devEnd": "gray",
       "ms_1772017506539_dataScadenzaStima": "hide",
       "ms_1772009349631_dataConfigSistema": "gray",
-      "ms_1772015597105_devStart": "hide"
+      "ms_1772015597105_devStart": "hide",
+      "ms_1772018580311_dataTest": "gray"
     }
   },
   {
@@ -570,7 +582,8 @@
     "rcFornitore": 400,
     "stimaCosto": 38000,
     "note": "in attesa di stime per la parte di NOTE spese su sito. Alcune cose, tipo kostelia, arriveranno dopo.",
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1773244674453",
@@ -599,6 +612,7 @@
     "rcFornitore": 400,
     "stimaCosto": 2400,
     "note": "",
-    "hidden": false
+    "hidden": false,
+    "progress": null
   }
 ]
