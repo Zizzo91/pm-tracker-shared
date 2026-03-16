@@ -679,5 +679,34 @@
     "stimaCosto": null,
     "note": "",
     "hidden": false
+  },
+  {
+    "id": "1773654751203",
+    "nome": "Casa&Salute - acquisto in app",
+    "fornitori": [
+      "Accenture"
+    ],
+    "owners": [
+      "Flavia"
+    ],
+    "dataStima": "2026-03-27",
+    "dataIA": null,
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/INSURANCE-2612"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "",
+    "hidden": false
   }
 ]
