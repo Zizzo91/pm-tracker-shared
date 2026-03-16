@@ -525,9 +525,9 @@
         "date": "2026-03-16",
         "title": "Attivare casa e salute scrivendo a Panichi",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-03-13T16:04:55.629Z",
-        "doneAt": null,
+        "doneAt": "2026-03-16T13:56:03.736Z",
         "updatedAt": "2026-03-13T16:17:38.940Z"
       },
       {
@@ -649,7 +649,8 @@
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "",
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1773654646103",
@@ -678,7 +679,8 @@
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "",
-    "hidden": false
+    "hidden": false,
+    "progress": null
   },
   {
     "id": "1773654751203",
@@ -707,6 +709,7 @@
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "",
-    "hidden": false
+    "hidden": false,
+    "progress": null
   }
 ]
