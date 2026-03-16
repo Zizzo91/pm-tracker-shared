@@ -553,7 +553,11 @@
       "ms_1773244674453_devStart": "gray",
       "ms_1772009349631_devStart": "gray",
       "ms_1772015731800_dataTest": "gray"
-    }
+    },
+    "owners": [],
+    "fornitori": [],
+    "customMilestones": [],
+    "hidden": false
   },
   {
     "id": "1772720469095",
@@ -617,5 +621,34 @@
     "note": "",
     "hidden": false,
     "progress": null
+  },
+  {
+    "id": "1773654522014",
+    "nome": "Riskshield",
+    "fornitori": [
+      "Accenture"
+    ],
+    "owners": [
+      "Flavia"
+    ],
+    "dataStima": "2026-02-18",
+    "dataIA": "2026-03-03",
+    "devStart": "2026-02-23",
+    "devEnd": "2026-03-06",
+    "dataTest": "2026-03-06",
+    "dataProd": "2026-04-20",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/RISKSHIELD-267"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": "2026-02-18",
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "",
+    "hidden": false
   }
 ]
