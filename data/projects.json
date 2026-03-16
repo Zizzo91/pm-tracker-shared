@@ -511,16 +511,6 @@
         "updatedAt": "2026-03-13T15:49:10.336Z"
       },
       {
-        "id": "1773074171772",
-        "date": "2026-03-16",
-        "title": "Chiedere ad Alessandro Bertipagani chi ha i documenti (contratto-precontratto)",
-        "note": "Per TPay X",
-        "done": false,
-        "createdAt": "2026-03-09T16:36:11.772Z",
-        "doneAt": null,
-        "updatedAt": "2026-03-12T11:21:26.089Z"
-      },
-      {
         "id": "1773417895629",
         "date": "2026-03-16",
         "title": "Attivare casa e salute scrivendo a Panichi",
@@ -539,6 +529,16 @@
         "createdAt": "2026-03-11T13:10:02.689Z",
         "doneAt": null,
         "updatedAt": "2026-03-13T16:04:11.160Z"
+      },
+      {
+        "id": "1773074171772",
+        "date": "2026-03-24",
+        "title": "Chiedere ad Alessandro Bertipagani chi ha i documenti (contratto-precontratto)",
+        "note": "Per TPay X",
+        "done": false,
+        "createdAt": "2026-03-09T16:36:11.772Z",
+        "doneAt": null,
+        "updatedAt": "2026-03-16T13:56:20.533Z"
       }
     ],
     "eventPrefs": {
