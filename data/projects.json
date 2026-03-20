@@ -539,15 +539,6 @@
         "doneAt": null
       },
       {
-        "id": "1773675005839",
-        "date": "2026-03-19",
-        "title": "Comunicare nuovi codici operazione a Capizzi e Mulesoft",
-        "note": "",
-        "done": false,
-        "createdAt": "2026-03-16T15:30:05.839Z",
-        "doneAt": null
-      },
-      {
         "id": "1774005953312",
         "date": "2026-03-20",
         "title": "Fissare call per KO SEDA & Onfido da canali con Andrea post pasquetta",
@@ -555,6 +546,16 @@
         "done": false,
         "createdAt": "2026-03-20T11:25:53.313Z",
         "doneAt": null
+      },
+      {
+        "id": "1773675005839",
+        "date": "2026-03-23",
+        "title": "Comunicare nuovi codici operazione a Capizzi e Mulesoft",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-03-16T15:30:05.839Z",
+        "doneAt": null,
+        "updatedAt": "2026-03-20T11:26:41.487Z"
       },
       {
         "id": "1774004493837",
