@@ -548,6 +548,16 @@
         "doneAt": null
       },
       {
+        "id": "1774005864607",
+        "date": "2026-03-20",
+        "title": "Fissare call con Biagio per casa e salute per 24/03",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-03-20T11:24:24.607Z",
+        "doneAt": null,
+        "updatedAt": "2026-03-20T11:27:03.887Z"
+      },
+      {
         "id": "1773675005839",
         "date": "2026-03-23",
         "title": "Comunicare nuovi codici operazione a Capizzi e Mulesoft",
@@ -564,15 +574,6 @@
         "note": "",
         "done": false,
         "createdAt": "2026-03-20T11:01:33.837Z",
-        "doneAt": null
-      },
-      {
-        "id": "1774005864607",
-        "date": "2026-03-23",
-        "title": "Fissare call con Biagio per casa e salute per 24/03",
-        "note": "",
-        "done": false,
-        "createdAt": "2026-03-20T11:24:24.607Z",
         "doneAt": null
       },
       {
