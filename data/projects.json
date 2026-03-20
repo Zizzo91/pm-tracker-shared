@@ -548,16 +548,6 @@
         "doneAt": null
       },
       {
-        "id": "1773234602689",
-        "date": "2026-03-20",
-        "title": "rispondere a olivieri per casa e salute",
-        "note": "",
-        "done": false,
-        "createdAt": "2026-03-11T13:10:02.689Z",
-        "doneAt": null,
-        "updatedAt": "2026-03-13T16:04:11.160Z"
-      },
-      {
         "id": "1774005953312",
         "date": "2026-03-20",
         "title": "Fissare call per KO SEDA & Onfido da canali con Andrea post pasquetta",
@@ -583,6 +573,16 @@
         "done": false,
         "createdAt": "2026-03-20T11:24:24.607Z",
         "doneAt": null
+      },
+      {
+        "id": "1773234602689",
+        "date": "2026-03-24",
+        "title": "rispondere a olivieri per casa e salute",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-03-11T13:10:02.689Z",
+        "doneAt": null,
+        "updatedAt": "2026-03-20T11:26:25.036Z"
       },
       {
         "id": "1773074171772",
