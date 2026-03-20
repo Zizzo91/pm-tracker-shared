@@ -756,5 +756,38 @@
     "note": "",
     "hidden": false,
     "progress": null
+  },
+  {
+    "id": "1774004802356",
+    "nome": "Casa&Salute",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Andrea",
+      "Simone"
+    ],
+    "progress": 1,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/INSURANCE-2618",
+      "https://telepass.atlassian.net/browse/INSURANCE-2626"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 16
   }
 ]
