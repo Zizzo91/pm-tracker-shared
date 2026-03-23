@@ -8,12 +8,13 @@
     "owners": [
       "Simone"
     ],
+    "progress": null,
     "dataStima": null,
     "dataIA": null,
     "devStart": "2026-02-23",
     "devEnd": "2026-03-20",
     "dataTest": "2026-04-06",
-    "dataProd": "2026-05-05",
+    "dataProd": "2026-05-18",
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
@@ -26,8 +27,7 @@
     "rcFornitore": 400,
     "stimaCosto": 8000,
     "note": "",
-    "hidden": false,
-    "progress": null
+    "hidden": false
   },
   {
     "id": "1772009744530",
