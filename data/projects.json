@@ -118,7 +118,7 @@
     "customMilestones": [],
     "hidden": false,
     "progress": null,
-    "ganttOrder": 6
+    "ganttOrder": 8
   },
   {
     "id": "1772014826609",
@@ -148,7 +148,7 @@
     "customMilestones": [],
     "hidden": false,
     "progress": null,
-    "ganttOrder": 7
+    "ganttOrder": 6
   },
   {
     "id": "1772015383415",
@@ -179,7 +179,7 @@
     "customMilestones": [],
     "hidden": false,
     "progress": null,
-    "ganttOrder": 8
+    "ganttOrder": 7
   },
   {
     "id": "1772015597105",
