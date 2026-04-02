@@ -28,7 +28,7 @@
     "stimaCosto": 8000,
     "note": "",
     "hidden": false,
-    "ganttOrder": 2
+    "ganttOrder": 3
   },
   {
     "id": "1772009744530",
@@ -58,7 +58,7 @@
     "customMilestones": [],
     "hidden": false,
     "progress": null,
-    "ganttOrder": 3
+    "ganttOrder": 4
   },
   {
     "id": "1772009902765",
@@ -88,7 +88,7 @@
     "customMilestones": [],
     "hidden": false,
     "progress": null,
-    "ganttOrder": 4
+    "ganttOrder": 5
   },
   {
     "id": "1772012800744",
@@ -118,7 +118,7 @@
     "customMilestones": [],
     "hidden": false,
     "progress": null,
-    "ganttOrder": 5
+    "ganttOrder": 6
   },
   {
     "id": "1772014826609",
@@ -148,7 +148,7 @@
     "customMilestones": [],
     "hidden": false,
     "progress": null,
-    "ganttOrder": 6
+    "ganttOrder": 7
   },
   {
     "id": "1772015383415",
@@ -179,7 +179,7 @@
     "customMilestones": [],
     "hidden": false,
     "progress": null,
-    "ganttOrder": 7
+    "ganttOrder": 8
   },
   {
     "id": "1772015597105",
@@ -207,7 +207,7 @@
     "customMilestones": [],
     "hidden": false,
     "progress": null,
-    "ganttOrder": 8
+    "ganttOrder": 9
   },
   {
     "id": "1772015731800",
@@ -301,7 +301,7 @@
     "note": "Ancora in attesa di un feedback da data platform",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 9
+    "ganttOrder": 10
   },
   {
     "id": "1772029183107",
@@ -332,7 +332,7 @@
     "note": "",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 10
+    "ganttOrder": 11
   },
   {
     "id": "__pm_tracker_meta__",
@@ -658,7 +658,7 @@
     "note": "in attesa di stime per la parte di NOTE spese su sito. Alcune cose, tipo kostelia, arriveranno dopo.",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 11
+    "ganttOrder": 12
   },
   {
     "id": "1773244674453",
@@ -689,7 +689,7 @@
     "note": "",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 12
+    "ganttOrder": 1
   },
   {
     "id": "1773654522014",
@@ -847,6 +847,6 @@
     "stimaCosto": 400,
     "note": "",
     "hidden": false,
-    "ganttOrder": 1
+    "ganttOrder": 2
   }
 ]
