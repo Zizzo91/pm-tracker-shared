@@ -720,7 +720,7 @@
     "note": "",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 15
+    "ganttOrder": 16
   },
   {
     "id": "1773654646103",
@@ -751,7 +751,7 @@
     "note": "",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 16
+    "ganttOrder": 17
   },
   {
     "id": "1773654751203",
@@ -782,7 +782,7 @@
     "note": "",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 17
+    "ganttOrder": 18
   },
   {
     "id": "1774004802356",
@@ -878,6 +878,6 @@
     "stimaCosto": null,
     "note": "",
     "hidden": false,
-    "ganttOrder": 18
+    "ganttOrder": 15
   }
 ]
