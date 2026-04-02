@@ -617,6 +617,15 @@
         "doneAt": null
       },
       {
+        "id": "1775124413634",
+        "date": "2026-04-07",
+        "title": "Discutere con Andrea di contratti G&G",
+        "note": "Mail di Simone Nigro del 02/04 alle 11.34: https://telepass.atlassian.net/browse/DPS-2871",
+        "done": false,
+        "createdAt": "2026-04-02T10:06:53.634Z",
+        "doneAt": null
+      },
+      {
         "id": "1773823698996",
         "date": "2026-04-16",
         "title": "Dire a Biagio nuova tabella e nuovo codice operazione KO SEDA",
