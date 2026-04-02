@@ -270,7 +270,7 @@
     "note": "",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 14
+    "ganttOrder": 15
   },
   {
     "id": "1772019429452",
@@ -878,6 +878,6 @@
     "stimaCosto": null,
     "note": "",
     "hidden": false,
-    "ganttOrder": 15
+    "ganttOrder": 14
   }
 ]
