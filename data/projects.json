@@ -848,5 +848,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 2
+  },
+  {
+    "id": "1775115577153",
+    "nome": "Modifica prezzo su furto dispositivo Area riservata",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": "2026-04-07",
+    "dataIA": null,
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/REP-74"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": "2026-04-07",
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 18
   }
 ]
