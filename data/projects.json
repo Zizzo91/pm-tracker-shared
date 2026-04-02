@@ -599,6 +599,15 @@
         "updatedAt": "2026-03-20T11:26:25.036Z"
       },
       {
+        "id": "1775124277803",
+        "date": "2026-04-07",
+        "title": "Dire ad Andrea Ciambella se query corretta o meno",
+        "note": "https://telepass.atlassian.net/browse/DPS-2964?focusedCommentId=375427",
+        "done": false,
+        "createdAt": "2026-04-02T10:04:37.803Z",
+        "doneAt": null
+      },
+      {
         "id": "1773823698996",
         "date": "2026-04-16",
         "title": "Dire a Biagio nuova tabella e nuovo codice operazione KO SEDA",
