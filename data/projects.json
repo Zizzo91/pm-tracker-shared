@@ -27,7 +27,8 @@
     "rcFornitore": 400,
     "stimaCosto": 8000,
     "note": "",
-    "hidden": false
+    "hidden": false,
+    "ganttOrder": 2
   },
   {
     "id": "1772009744530",
@@ -56,7 +57,8 @@
     "stimaCosto": 4000,
     "customMilestones": [],
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 3
   },
   {
     "id": "1772009902765",
@@ -85,7 +87,8 @@
     "stimaCosto": 14000,
     "customMilestones": [],
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 4
   },
   {
     "id": "1772012800744",
@@ -114,7 +117,8 @@
     "stimaCosto": 4000,
     "customMilestones": [],
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 5
   },
   {
     "id": "1772014826609",
@@ -143,7 +147,8 @@
     "stimaCosto": 1820,
     "customMilestones": [],
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 6
   },
   {
     "id": "1772015383415",
@@ -173,7 +178,8 @@
     "stimaCosto": 16000,
     "customMilestones": [],
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 7
   },
   {
     "id": "1772015597105",
@@ -200,7 +206,8 @@
     "stimaCosto": 2184,
     "customMilestones": [],
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 8
   },
   {
     "id": "1772015731800",
@@ -229,7 +236,8 @@
     "stimaCosto": 4800,
     "customMilestones": [],
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 14
   },
   {
     "id": "1772018580311",
@@ -261,7 +269,8 @@
     "stimaCosto": null,
     "note": "",
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 9
   },
   {
     "id": "1772019429452",
@@ -291,7 +300,8 @@
     "stimaCosto": null,
     "note": "Ancora in attesa di un feedback da data platform",
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 10
   },
   {
     "id": "1772029183107",
@@ -321,7 +331,8 @@
     "stimaCosto": 10000,
     "note": "",
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 11
   },
   {
     "id": "__pm_tracker_meta__",
@@ -646,7 +657,8 @@
     "stimaCosto": 38000,
     "note": "in attesa di stime per la parte di NOTE spese su sito. Alcune cose, tipo kostelia, arriveranno dopo.",
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 12
   },
   {
     "id": "1773244674453",
@@ -676,7 +688,8 @@
     "stimaCosto": 2400,
     "note": "",
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 13
   },
   {
     "id": "1773654522014",
@@ -706,7 +719,8 @@
     "stimaCosto": null,
     "note": "",
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 15
   },
   {
     "id": "1773654646103",
@@ -736,7 +750,8 @@
     "stimaCosto": null,
     "note": "",
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 16
   },
   {
     "id": "1773654751203",
@@ -766,7 +781,8 @@
     "stimaCosto": null,
     "note": "",
     "hidden": false,
-    "progress": null
+    "progress": null,
+    "ganttOrder": 17
   },
   {
     "id": "1774004802356",
@@ -799,7 +815,7 @@
     "stimaCosto": null,
     "note": "",
     "hidden": false,
-    "ganttOrder": 16
+    "ganttOrder": 0
   },
   {
     "id": "1775115060412",
@@ -831,6 +847,6 @@
     "stimaCosto": 400,
     "note": "",
     "hidden": false,
-    "ganttOrder": 17
+    "ganttOrder": 1
   }
 ]
