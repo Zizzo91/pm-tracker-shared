@@ -237,7 +237,7 @@
     "customMilestones": [],
     "hidden": false,
     "progress": null,
-    "ganttOrder": 14
+    "ganttOrder": 13
   },
   {
     "id": "1772018580311",
@@ -270,7 +270,7 @@
     "note": "",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 9
+    "ganttOrder": 14
   },
   {
     "id": "1772019429452",
@@ -301,7 +301,7 @@
     "note": "Ancora in attesa di un feedback da data platform",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 10
+    "ganttOrder": 9
   },
   {
     "id": "1772029183107",
@@ -332,7 +332,7 @@
     "note": "",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 11
+    "ganttOrder": 10
   },
   {
     "id": "__pm_tracker_meta__",
@@ -658,7 +658,7 @@
     "note": "in attesa di stime per la parte di NOTE spese su sito. Alcune cose, tipo kostelia, arriveranno dopo.",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 12
+    "ganttOrder": 11
   },
   {
     "id": "1773244674453",
@@ -689,7 +689,7 @@
     "note": "",
     "hidden": false,
     "progress": null,
-    "ganttOrder": 13
+    "ganttOrder": 12
   },
   {
     "id": "1773654522014",
