@@ -800,5 +800,37 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 16
+  },
+  {
+    "id": "1775115060412",
+    "nome": "Modifica puntamenti AgentForce",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Andrea",
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-03-30",
+    "devEnd": "2026-03-30",
+    "dataTest": "2026-03-30",
+    "dataProd": null,
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/SLF-4545"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 1,
+    "rcFornitore": 400,
+    "stimaCosto": 400,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 17
   }
 ]
