@@ -69,25 +69,26 @@
     "owners": [
       "Simone"
     ],
-    "dataStima": "",
+    "progress": null,
+    "dataStima": null,
     "dataIA": null,
     "devStart": "2026-04-16",
-    "devEnd": "2026-05-15",
-    "dataTest": "2026-05-15",
-    "dataProd": "2026-06-23",
+    "devEnd": "2026-05-22",
+    "dataTest": "2026-05-22",
+    "dataProd": "2026-07-15",
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
       "https://telepass.atlassian.net/browse/DPS-2472"
     ],
+    "customMilestones": [],
     "dataScadenzaStima": null,
     "dataConfigSistema": "2026-04-16",
     "stimaGgu": 35,
     "rcFornitore": 400,
     "stimaCosto": 14000,
-    "customMilestones": [],
+    "note": "",
     "hidden": false,
-    "progress": null,
     "ganttOrder": 5
   },
   {
