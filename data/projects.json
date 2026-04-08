@@ -612,9 +612,9 @@
         "date": "2026-04-07",
         "title": "Discutere con andrea di casa e salute",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-04-02T10:05:25.318Z",
-        "doneAt": null
+        "doneAt": "2026-04-08T12:50:32.426Z"
       },
       {
         "id": "1775124413634",
