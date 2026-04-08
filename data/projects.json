@@ -648,9 +648,9 @@
         "date": "2026-04-07",
         "title": "Chiedere ad andrea di codici operazione cambio iban",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-04-07T06:54:40.129Z",
-        "doneAt": null
+        "doneAt": "2026-04-08T12:50:24.070Z"
       },
       {
         "id": "1773823698996",
