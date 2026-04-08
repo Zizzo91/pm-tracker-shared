@@ -639,9 +639,9 @@
         "date": "2026-04-07",
         "title": "Chiedere ad andrea della lista movimenti",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-04-07T06:52:29.432Z",
-        "doneAt": null
+        "doneAt": "2026-04-08T12:50:27.345Z"
       },
       {
         "id": "1775544880129",
