@@ -621,9 +621,9 @@
         "date": "2026-04-07",
         "title": "Discutere con Andrea di contratti G&G",
         "note": "Mail di Simone Nigro del 02/04 alle 11.34: https://telepass.atlassian.net/browse/DPS-2871",
-        "done": false,
+        "done": true,
         "createdAt": "2026-04-02T10:06:53.634Z",
-        "doneAt": null
+        "doneAt": "2026-04-08T12:45:47.280Z"
       },
       {
         "id": "1775137564443",
