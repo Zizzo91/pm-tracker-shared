@@ -947,5 +947,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 19
+  },
+  {
+    "id": "1776326100794",
+    "nome": "Repricing base (furto dispositivo)",
+    "fornitori": [
+      "ENG"
+    ],
+    "owners": [
+      "Andrea"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-04-14",
+    "devEnd": "2026-04-22",
+    "dataTest": "2026-04-23",
+    "dataProd": "2026-05-05",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-3024"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 1,
+    "rcFornitore": 400,
+    "stimaCosto": 400,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 20
   }
 ]
