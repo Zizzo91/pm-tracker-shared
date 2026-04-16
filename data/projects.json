@@ -882,7 +882,7 @@
     "rcFornitore": 400,
     "stimaCosto": 400,
     "note": "",
-    "hidden": false,
+    "hidden": true,
     "ganttOrder": 2
   },
   {
