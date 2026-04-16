@@ -915,5 +915,37 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 14
+  },
+  {
+    "id": "1776325327413",
+    "nome": "Vendita twin burger king",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone",
+      "Andrea"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-04-01",
+    "devEnd": "2026-04-20",
+    "dataTest": "2026-04-21",
+    "dataProd": "2026-05-05",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/RCH-541"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 30,
+    "rcFornitore": 400,
+    "stimaCosto": 12000,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 19
   }
 ]
