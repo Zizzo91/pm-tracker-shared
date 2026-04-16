@@ -88,7 +88,7 @@
     "rcFornitore": 400,
     "stimaCosto": 14000,
     "note": "",
-    "hidden": false,
+    "hidden": true,
     "ganttOrder": 5
   },
   {
