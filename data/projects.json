@@ -850,7 +850,7 @@
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "",
-    "hidden": false,
+    "hidden": true,
     "ganttOrder": 0
   },
   {
