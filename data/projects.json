@@ -161,25 +161,26 @@
       "Simone",
       "Andrea"
     ],
-    "dataStima": "",
+    "progress": null,
+    "dataStima": null,
     "dataIA": null,
-    "devStart": "2026-04-27",
-    "devEnd": "2026-06-04",
-    "dataTest": "2026-06-11",
-    "dataProd": "2026-06-23",
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
       "https://telepass.atlassian.net/browse/SLF-4854"
     ],
+    "customMilestones": [],
     "dataScadenzaStima": null,
     "dataConfigSistema": null,
     "stimaGgu": 40,
     "rcFornitore": 400,
     "stimaCosto": 16000,
-    "customMilestones": [],
+    "note": "",
     "hidden": false,
-    "progress": null,
     "ganttOrder": 7
   },
   {
