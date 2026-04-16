@@ -301,7 +301,7 @@
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "Ancora in attesa di un feedback da data platform",
-    "hidden": false,
+    "hidden": true,
     "progress": null,
     "ganttOrder": 10
   },
