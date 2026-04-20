@@ -642,6 +642,15 @@
         "done": true,
         "createdAt": "2026-03-18T08:48:18.996Z",
         "doneAt": "2026-04-16T14:50:07.391Z"
+      },
+      {
+        "id": "1776679432210",
+        "date": "2026-04-22",
+        "title": "Chiedere ad Andrea della TETSNS",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-04-20T10:03:52.210Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
