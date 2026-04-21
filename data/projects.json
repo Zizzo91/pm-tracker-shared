@@ -987,5 +987,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 20
+  },
+  {
+    "id": "1776765505727",
+    "nome": "Sempre Light",
+    "fornitori": [
+      "ENG"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": "2026-07-16",
+    "dataProd": "2026-09-07",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-3083"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 21
   }
 ]
