@@ -651,6 +651,15 @@
         "done": false,
         "createdAt": "2026-04-20T10:03:52.210Z",
         "doneAt": null
+      },
+      {
+        "id": "1776848912776",
+        "date": "2026-04-23",
+        "title": "Chiedere ad Andrea del nuovo modello DIRF1",
+        "note": "È normale che non si parli della TETSNS?",
+        "done": false,
+        "createdAt": "2026-04-22T09:08:32.776Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
