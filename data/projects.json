@@ -1036,5 +1036,37 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 21
+  },
+  {
+    "id": "1777037103135",
+    "nome": "CodiceID",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Andrea",
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-05-20",
+    "devEnd": "2026-05-25",
+    "dataTest": "2026-05-25",
+    "dataProd": "2026-06-09",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/CPS-2828"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 5,
+    "rcFornitore": 400,
+    "stimaCosto": 2000,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 22
   }
 ]
