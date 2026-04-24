@@ -843,7 +843,7 @@
     "rcFornitore": null,
     "stimaCosto": null,
     "note": "",
-    "hidden": false,
+    "hidden": true,
     "progress": null,
     "ganttOrder": 18
   },
