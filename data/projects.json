@@ -1068,5 +1068,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 22
+  },
+  {
+    "id": "1777367982170",
+    "nome": "Mail penny check per iban esteri in onboarding sito",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": "2026-04-28",
+    "dataIA": null,
+    "devStart": "2026-05-04",
+    "devEnd": "2026-05-05",
+    "dataTest": "2026-05-06",
+    "dataProd": "2026-06-09",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/MKTG-646"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": "2026-04-28",
+    "dataConfigSistema": null,
+    "stimaGgu": 1,
+    "rcFornitore": 400,
+    "stimaCosto": 400,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 23
   }
 ]
