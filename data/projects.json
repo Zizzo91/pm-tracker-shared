@@ -705,6 +705,15 @@
         "done": true,
         "createdAt": "2026-05-04T09:49:59.275Z",
         "doneAt": "2026-05-04T14:13:59.211Z"
+      },
+      {
+        "id": "1777905063496",
+        "date": "2026-05-05",
+        "title": "Chiedere a Sara di Venezia",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-05-04T14:31:03.496Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
