@@ -678,6 +678,15 @@
         "done": false,
         "createdAt": "2026-05-04T07:42:38.732Z",
         "doneAt": null
+      },
+      {
+        "id": "1777880567085",
+        "date": "2026-05-04",
+        "title": "Consuntivare",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-05-04T07:42:47.085Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
