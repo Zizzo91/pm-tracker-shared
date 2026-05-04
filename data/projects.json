@@ -687,6 +687,15 @@
         "done": false,
         "createdAt": "2026-05-04T07:42:47.085Z",
         "doneAt": null
+      },
+      {
+        "id": "1777880584279",
+        "date": "2026-05-04",
+        "title": "problema doppia targa KSF/KSA",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-05-04T07:43:04.279Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
