@@ -696,6 +696,15 @@
         "done": false,
         "createdAt": "2026-05-04T07:43:04.279Z",
         "doneAt": null
+      },
+      {
+        "id": "1777888199275",
+        "date": "2026-05-04",
+        "title": "Aggiornare doc analisi per specificare la parte post firma per ENG su sempre light",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-05-04T09:49:59.275Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
