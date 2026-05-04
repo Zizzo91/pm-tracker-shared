@@ -684,9 +684,9 @@
         "date": "2026-05-04",
         "title": "Consuntivare",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-05-04T07:42:47.085Z",
-        "doneAt": null
+        "doneAt": "2026-05-04T14:13:56.337Z"
       },
       {
         "id": "1777880584279",
