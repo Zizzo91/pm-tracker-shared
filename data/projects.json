@@ -724,6 +724,15 @@
         "done": true,
         "createdAt": "2026-05-04T14:31:03.496Z",
         "doneAt": "2026-05-05T13:40:12.450Z"
+      },
+      {
+        "id": "1777988423486",
+        "date": "2026-05-05",
+        "title": "Scrivere a Peruggini per Venezia",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-05-05T13:40:23.486Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
