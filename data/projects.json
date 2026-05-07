@@ -733,6 +733,15 @@
         "done": true,
         "createdAt": "2026-05-05T13:40:23.486Z",
         "doneAt": "2026-05-07T12:46:19.511Z"
+      },
+      {
+        "id": "1778158032256",
+        "date": "2026-05-08",
+        "title": "Da discutere con Sara e Andrea",
+        "note": "1. Venezia pass; 2. Splendorini; 3. cambio copy per repricing dal 1/08; 4. il bug che ha segnalato Sara con Guglielmo",
+        "done": false,
+        "createdAt": "2026-05-07T12:47:12.256Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
