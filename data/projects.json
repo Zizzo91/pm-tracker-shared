@@ -739,9 +739,9 @@
         "date": "2026-05-08",
         "title": "Da discutere con Sara e Andrea",
         "note": "1. Venezia pass; 2. Splendorini; 3. cambio copy per repricing dal 1/08; 4. il bug che ha segnalato Sara con Guglielmo",
-        "done": false,
+        "done": true,
         "createdAt": "2026-05-07T12:47:12.256Z",
-        "doneAt": null
+        "doneAt": "2026-05-08T15:01:30.860Z"
       },
       {
         "id": "1778252074428",
