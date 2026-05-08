@@ -1102,7 +1102,7 @@
     ],
     "customMilestones": [],
     "dataScadenzaStima": null,
-    "dataConfigSistema": null,
+    "dataConfigSistema": "2026-05-29",
     "stimaGgu": 66,
     "rcFornitore": 400,
     "stimaCosto": 26400,
