@@ -751,6 +751,15 @@
         "done": false,
         "createdAt": "2026-05-08T14:54:34.428Z",
         "doneAt": null
+      },
+      {
+        "id": "1778252480563",
+        "date": "2026-05-11",
+        "title": "aggiornare il budget di sempre light e gold.",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-05-08T15:01:20.563Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
