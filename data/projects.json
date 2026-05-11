@@ -760,6 +760,15 @@
         "done": false,
         "createdAt": "2026-05-08T15:01:20.563Z",
         "doneAt": null
+      },
+      {
+        "id": "1778491622765",
+        "date": "2026-05-12",
+        "title": "Sentire fabretti per cambio copy furto dispositivo",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-05-11T09:27:02.765Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
