@@ -769,6 +769,15 @@
         "done": false,
         "createdAt": "2026-05-11T09:27:02.765Z",
         "doneAt": null
+      },
+      {
+        "id": "1778491654160",
+        "date": "2026-05-12",
+        "title": "Scrivere a mugniaioni per problema ksf/ksa",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-05-11T09:27:34.160Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
