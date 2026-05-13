@@ -775,9 +775,9 @@
         "date": "2026-05-12",
         "title": "Sentire fabretti per cambio copy furto dispositivo",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-05-11T09:27:02.765Z",
-        "doneAt": null
+        "doneAt": "2026-05-13T15:28:23.781Z"
       },
       {
         "id": "1778491654160",
