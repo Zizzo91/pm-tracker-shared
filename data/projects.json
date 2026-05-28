@@ -666,9 +666,9 @@
         "date": "2026-04-27",
         "title": "Chiedere a Sara di far stimare la modifica del testo a settembre",
         "note": "",
-        "done": false,
+        "done": true,
         "createdAt": "2026-04-24T09:55:41.763Z",
-        "doneAt": null
+        "doneAt": "2026-05-28T12:32:16.945Z"
       },
       {
         "id": "1777880558732",
