@@ -832,6 +832,15 @@
         "done": true,
         "createdAt": "2026-05-21T14:46:05.292Z",
         "doneAt": "2026-05-28T12:32:35.777Z"
+      },
+      {
+        "id": "1780472574960",
+        "date": "2026-06-03",
+        "title": "Aggiornare documento con cambio email da sito",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-06-03T07:42:54.960Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
