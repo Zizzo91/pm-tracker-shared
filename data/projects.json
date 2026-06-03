@@ -841,6 +841,15 @@
         "done": false,
         "createdAt": "2026-06-03T07:42:54.960Z",
         "doneAt": null
+      },
+      {
+        "id": "1780482494937",
+        "date": "2026-06-03",
+        "title": "Chiedere ad Andrea dei bug in prod di vignette, a chi va assegnato?",
+        "note": "https://telepass.atlassian.net/browse/GBT2-800",
+        "done": false,
+        "createdAt": "2026-06-03T10:28:14.937Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
