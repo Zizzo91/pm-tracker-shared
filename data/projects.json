@@ -850,6 +850,15 @@
         "done": true,
         "createdAt": "2026-06-03T10:28:14.937Z",
         "doneAt": "2026-06-05T08:53:13.930Z"
+      },
+      {
+        "id": "1780649635763",
+        "date": "2026-06-05",
+        "title": "rispondere ad Angelo Aiello per nuova causale iban check",
+        "note": "",
+        "done": false,
+        "createdAt": "2026-06-05T08:53:55.763Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
