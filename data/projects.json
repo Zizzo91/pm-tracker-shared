@@ -1289,5 +1289,39 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 23
+  },
+  {
+    "id": "1781519374256",
+    "nome": "MEMO PRO",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": "2026-06-15",
+    "dataIA": null,
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-3381",
+      "https://telepass.atlassian.net/browse/DPS-3373",
+      "https://telepass.atlassian.net/browse/DPS-3389",
+      "https://telepass.atlassian.net/browse/DPS-3391"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": "2026-06-15",
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 24
   }
 ]
