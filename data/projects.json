@@ -1326,7 +1326,7 @@
   },
   {
     "id": "1781598146565",
-    "nome": "Contratto in lingua su KTI per G&G",
+    "nome": "Contratto in lingua su KTI per G&G (CMS)",
     "fornitori": [
       "Engineering"
     ],
@@ -1348,9 +1348,9 @@
     "customMilestones": [],
     "dataScadenzaStima": "2026-06-18",
     "dataConfigSistema": null,
-    "stimaGgu": null,
-    "rcFornitore": null,
-    "stimaCosto": null,
+    "stimaGgu": 7,
+    "rcFornitore": 400,
+    "stimaCosto": 2800,
     "note": "",
     "hidden": false,
     "ganttOrder": 25
