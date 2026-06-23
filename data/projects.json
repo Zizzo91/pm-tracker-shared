@@ -1354,5 +1354,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 25
+  },
+  {
+    "id": "1782220910211",
+    "nome": "Contratti in lingua",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/PPU-1025"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": "2026-07-07",
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 26
   }
 ]
