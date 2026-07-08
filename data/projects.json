@@ -1394,5 +1394,41 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 26
+  },
+  {
+    "id": "1783499586800",
+    "nome": "Naked/Essenziale - FASE 1",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-09-01",
+    "devEnd": "2026-10-13",
+    "dataTest": "2026-10-14",
+    "dataProd": "2026-11-10",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-3298"
+    ],
+    "customMilestones": [
+      {
+        "label": "Data entro cui serve configurazione test",
+        "date": "2026-10-01"
+      }
+    ],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": "2026-09-07",
+    "stimaGgu": 45,
+    "rcFornitore": 390,
+    "stimaCosto": 17550,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 27
   }
 ]
