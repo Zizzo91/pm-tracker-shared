@@ -1312,9 +1312,9 @@
     "dataStima": "2026-06-15",
     "dataIA": null,
     "devStart": null,
-    "devEnd": null,
-    "dataTest": null,
-    "dataProd": null,
+    "devEnd": "2026-08-07",
+    "dataTest": "2026-08-07",
+    "dataProd": "2026-09-07",
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
