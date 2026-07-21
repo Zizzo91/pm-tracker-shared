@@ -315,12 +315,13 @@
     "owners": [
       "Simone"
     ],
+    "progress": null,
     "dataStima": null,
     "dataIA": null,
     "devStart": "2026-05-25",
     "devEnd": "2026-06-22",
     "dataTest": "2026-06-23",
-    "dataProd": "2026-07-15",
+    "dataProd": "2026-07-21",
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
@@ -334,7 +335,6 @@
     "stimaCosto": 10000,
     "note": "",
     "hidden": false,
-    "progress": null,
     "ganttOrder": 11
   },
   {
