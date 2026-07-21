@@ -1411,12 +1411,12 @@
       "Simone"
     ],
     "progress": null,
-    "dataStima": "2026-07-08",
+    "dataStima": null,
     "dataIA": null,
     "devStart": null,
-    "devEnd": "2026-10-19",
-    "dataTest": "2026-11-17",
-    "dataProd": "2026-12-14",
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
