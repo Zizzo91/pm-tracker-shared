@@ -1431,5 +1431,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 28
+  },
+  {
+    "id": "1784641469831",
+    "nome": "Cambio copy repricing",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-07-06",
+    "devEnd": "2026-07-08",
+    "dataTest": "2026-07-22",
+    "dataProd": "2026-09-07",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/REP-91"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 3,
+    "rcFornitore": 390,
+    "stimaCosto": 1170,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 28
   }
 ]
