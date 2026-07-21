@@ -1377,10 +1377,10 @@
     "progress": null,
     "dataStima": null,
     "dataIA": null,
-    "devStart": "2026-09-01",
-    "devEnd": "2026-10-13",
-    "dataTest": "2026-10-14",
-    "dataProd": "2026-11-10",
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
@@ -1393,7 +1393,7 @@
       }
     ],
     "dataScadenzaStima": null,
-    "dataConfigSistema": "2026-09-07",
+    "dataConfigSistema": null,
     "stimaGgu": 45,
     "rcFornitore": 390,
     "stimaCosto": 17550,
