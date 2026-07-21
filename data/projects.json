@@ -1233,7 +1233,7 @@
     "stimaGgu": 66,
     "rcFornitore": 400,
     "stimaCosto": 26400,
-    "note": "",
+    "note": "Da capire come gestire i campi di Memo e Memo Pro su prepara-dati-intesa",
     "hidden": false,
     "ganttOrder": 21
   },
