@@ -1312,7 +1312,7 @@
     "progress": null,
     "dataStima": "2026-06-15",
     "dataIA": null,
-    "devStart": null,
+    "devStart": "2026-07-13",
     "devEnd": "2026-08-07",
     "dataTest": "2026-08-07",
     "dataProd": "2026-09-07",
