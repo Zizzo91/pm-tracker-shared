@@ -1335,37 +1335,6 @@
     "ganttOrder": 24
   },
   {
-    "id": "1781598146565",
-    "nome": "Contratto in lingua su KTI per G&G (CMS)",
-    "fornitori": [
-      "Engineering"
-    ],
-    "owners": [
-      "Simone"
-    ],
-    "progress": null,
-    "dataStima": null,
-    "dataIA": null,
-    "devStart": null,
-    "devEnd": null,
-    "dataTest": null,
-    "dataProd": null,
-    "dataUAT": null,
-    "dataBS": null,
-    "jiraLinks": [
-      "https://telepass.atlassian.net/browse/PPU-1035"
-    ],
-    "customMilestones": [],
-    "dataScadenzaStima": "2026-06-18",
-    "dataConfigSistema": null,
-    "stimaGgu": 7,
-    "rcFornitore": 400,
-    "stimaCosto": 2800,
-    "note": "",
-    "hidden": false,
-    "ganttOrder": 25
-  },
-  {
     "id": "1782220910211",
     "nome": "Contratti in lingua",
     "fornitori": [
