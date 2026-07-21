@@ -100,25 +100,26 @@
     "owners": [
       "Simone"
     ],
-    "dataStima": "",
+    "progress": null,
+    "dataStima": null,
     "dataIA": null,
     "devStart": "2026-06-08",
     "devEnd": "2026-06-15",
     "dataTest": "2026-06-16",
-    "dataProd": "2026-07-15",
+    "dataProd": "2026-07-21",
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
       "https://telepass.atlassian.net/browse/COMPLIANCE-1805"
     ],
+    "customMilestones": [],
     "dataScadenzaStima": null,
     "dataConfigSistema": "2026-06-08",
     "stimaGgu": 10,
     "rcFornitore": 400,
     "stimaCosto": 4000,
-    "customMilestones": [],
+    "note": "",
     "hidden": false,
-    "progress": null,
     "ganttOrder": 8
   },
   {
