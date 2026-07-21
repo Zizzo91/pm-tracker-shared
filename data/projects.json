@@ -898,12 +898,13 @@
     "owners": [
       "Simone"
     ],
+    "progress": null,
     "dataStima": null,
     "dataIA": "2026-03-10",
     "devStart": "2026-03-09",
     "devEnd": "2026-05-15",
     "dataTest": "2026-05-29",
-    "dataProd": "2026-07-15",
+    "dataProd": "2026-07-21",
     "dataUAT": null,
     "dataBS": null,
     "jiraLinks": [
@@ -920,7 +921,6 @@
     "stimaCosto": 38000,
     "note": "in attesa di stime per la parte di NOTE spese su sito. Alcune cose, tipo kostelia, arriveranno dopo.",
     "hidden": false,
-    "progress": null,
     "ganttOrder": 12
   },
   {
