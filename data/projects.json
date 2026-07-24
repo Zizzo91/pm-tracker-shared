@@ -1462,5 +1462,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 28
+  },
+  {
+    "id": "1784898931537",
+    "nome": "Email vignette GOBY",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": "2026-09-07",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/GBT2-818"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 9,
+    "rcFornitore": 390,
+    "stimaCosto": 3510,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 29
   }
 ]
