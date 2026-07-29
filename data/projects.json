@@ -1493,5 +1493,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 29
+  },
+  {
+    "id": "1785315323325",
+    "nome": "Onfido Splendorini",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": "2026-08-05",
+    "dataIA": null,
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/OADV-155"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": "2026-08-05",
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": 390,
+    "stimaCosto": null,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 30
   }
 ]
