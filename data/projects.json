@@ -1533,5 +1533,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 30
+  },
+  {
+    "id": "1788248902953",
+    "nome": "Plafond skipass",
+    "fornitori": [
+      "ENG"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": null,
+    "devEnd": null,
+    "dataTest": null,
+    "dataProd": null,
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-4103"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": "2026-09-07",
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 31
   }
 ]
