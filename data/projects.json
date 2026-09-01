@@ -869,6 +869,15 @@
         "done": true,
         "createdAt": "2026-06-25T15:02:46.300Z",
         "doneAt": "2026-08-07T12:26:26.391Z"
+      },
+      {
+        "id": "1788248850173",
+        "date": "2026-09-02",
+        "title": "Da dire Ad Andrea",
+        "note": "1. Questione plafond skipass: su contratto o su titolo? 2. MKTG-690 ho chiesto di stimarla e poi dobbiamo capire dove spesarla; 3.",
+        "done": false,
+        "createdAt": "2026-09-01T07:47:30.173Z",
+        "doneAt": null
       }
     ],
     "eventPrefs": {
