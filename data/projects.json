@@ -1571,5 +1571,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 32
+  },
+  {
+    "id": "1795002369907",
+    "nome": "Iban Revolut SEDA",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-11-03",
+    "devEnd": "2026-11-10",
+    "dataTest": "2026-11-11",
+    "dataProd": "2026-12-14",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-4324"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 15,
+    "rcFornitore": 390,
+    "stimaCosto": 5850,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 33
   }
 ]
