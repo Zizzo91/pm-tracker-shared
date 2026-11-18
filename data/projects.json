@@ -1514,7 +1514,7 @@
     "id": "1795002161776",
     "nome": "Repricing ass. stradale | Contratti",
     "fornitori": [
-      "IO"
+      "ENG"
     ],
     "owners": [
       "Simone"
@@ -1532,7 +1532,7 @@
       "https://telepass.atlassian.net/browse/RECPRSA-8"
     ],
     "customMilestones": [],
-    "dataScadenzaStima": null,
+    "dataScadenzaStima": "2026-11-20",
     "dataConfigSistema": null,
     "stimaGgu": 0,
     "rcFornitore": 0,
