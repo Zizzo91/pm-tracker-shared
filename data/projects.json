@@ -1478,5 +1478,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 29
+  },
+  {
+    "id": "1795002058111",
+    "nome": "Upselling Salesforce da sito",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-11-23",
+    "devEnd": "2026-11-26",
+    "dataTest": "2026-12-15",
+    "dataProd": "2027-02-09",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/SLF-6825"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 8,
+    "rcFornitore": 390,
+    "stimaCosto": 3120,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 30
   }
 ]
