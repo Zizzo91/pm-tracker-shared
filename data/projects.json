@@ -1355,37 +1355,6 @@
     "ganttOrder": 26
   },
   {
-    "id": "1783499764881",
-    "nome": "Naked/Sempre Essenziale - FASE 1.1",
-    "fornitori": [
-      "Engineering"
-    ],
-    "owners": [
-      "Simone"
-    ],
-    "progress": null,
-    "dataStima": null,
-    "dataIA": null,
-    "devStart": null,
-    "devEnd": null,
-    "dataTest": null,
-    "dataProd": null,
-    "dataUAT": null,
-    "dataBS": null,
-    "jiraLinks": [
-      "https://telepass.atlassian.net/browse/DPS-3481"
-    ],
-    "customMilestones": [],
-    "dataScadenzaStima": null,
-    "dataConfigSistema": null,
-    "stimaGgu": 37,
-    "rcFornitore": 390,
-    "stimaCosto": 14430,
-    "note": "",
-    "hidden": false,
-    "ganttOrder": 28
-  },
-  {
     "id": "1784641469831",
     "nome": "Cambio copy repricing",
     "fornitori": [
