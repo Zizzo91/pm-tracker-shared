@@ -1540,5 +1540,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 31
+  },
+  {
+    "id": "1795002262707",
+    "nome": "Repricing assistenza stradale | Modifica tessera SVG",
+    "fornitori": [
+      "ENG"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-01-07",
+    "devEnd": "2027-01-19",
+    "dataTest": "2027-01-20",
+    "dataProd": "2027-02-09",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/RECPRSA-44"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 18,
+    "rcFornitore": 390,
+    "stimaCosto": 7020,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 32
   }
 ]
