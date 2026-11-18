@@ -1509,5 +1509,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 30
+  },
+  {
+    "id": "1795002161776",
+    "nome": "Repricing ass. stradale | Contratti",
+    "fornitori": [
+      "IO"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-11-25",
+    "devEnd": "2026-12-01",
+    "dataTest": "2026-12-01",
+    "dataProd": "2027-01-25",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/RECPRSA-8"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 0,
+    "rcFornitore": 0,
+    "stimaCosto": 0,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 31
   }
 ]
