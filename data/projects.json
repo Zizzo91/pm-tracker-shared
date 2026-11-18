@@ -1633,5 +1633,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 34
+  },
+  {
+    "id": "1795002727347",
+    "nome": "Vintrica",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-11-16",
+    "devEnd": "2026-11-24",
+    "dataTest": "2026-11-25",
+    "dataProd": "2026-12-14",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-4483"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": null,
+    "rcFornitore": null,
+    "stimaCosto": null,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 35
   }
 ]
