@@ -1446,5 +1446,37 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 31
+  },
+  {
+    "id": "1795001954112",
+    "nome": "Migrazione TPay X",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Andrea",
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-09-21",
+    "devEnd": "2026-11-20",
+    "dataTest": "2026-11-20",
+    "dataProd": "2026-12-14",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-4144"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 75,
+    "rcFornitore": 390,
+    "stimaCosto": 29250,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 29
   }
 ]
