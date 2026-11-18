@@ -870,7 +870,8 @@
       "ms_1773654646103_dataScadenzaStima": "hide",
       "ms_1773654646103_devStart": "hide",
       "ms_1773654646103_dataIA": "hide",
-      "ms_1788248902953_dataScadenzaStima": "hide"
+      "ms_1788248902953_dataScadenzaStima": "hide",
+      "custom_1783499586800_208886837": "hide"
     },
     "owners": [],
     "fornitori": [],
@@ -1352,42 +1353,6 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 26
-  },
-  {
-    "id": "1783499586800",
-    "nome": "Naked/Sempre Essenziale - FASE 1",
-    "fornitori": [
-      "Engineering"
-    ],
-    "owners": [
-      "Simone"
-    ],
-    "progress": null,
-    "dataStima": null,
-    "dataIA": null,
-    "devStart": null,
-    "devEnd": null,
-    "dataTest": null,
-    "dataProd": null,
-    "dataUAT": null,
-    "dataBS": null,
-    "jiraLinks": [
-      "https://telepass.atlassian.net/browse/DPS-3298"
-    ],
-    "customMilestones": [
-      {
-        "label": "Data entro cui serve configurazione test",
-        "date": "2026-10-01"
-      }
-    ],
-    "dataScadenzaStima": null,
-    "dataConfigSistema": null,
-    "stimaGgu": 45,
-    "rcFornitore": 390,
-    "stimaCosto": 17550,
-    "note": "",
-    "hidden": false,
-    "ganttOrder": 27
   },
   {
     "id": "1783499764881",
