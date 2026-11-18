@@ -1602,5 +1602,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 33
+  },
+  {
+    "id": "1795002482602",
+    "nome": "Cross Selling",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-11-30",
+    "devEnd": "2027-02-10",
+    "dataTest": "2027-02-10",
+    "dataProd": "2027-03-09",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/SLF-6885"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 33,
+    "rcFornitore": 390,
+    "stimaCosto": 12870,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 34
   }
 ]
