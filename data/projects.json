@@ -867,7 +867,8 @@
       "ms_1772015731800_dataTest": "gray",
       "ms_1773654646103_dataTest": "hide",
       "ms_1773654646103_devEnd": "hide",
-      "ms_1773654646103_dataScadenzaStima": "hide"
+      "ms_1773654646103_dataScadenzaStima": "hide",
+      "ms_1773654646103_devStart": "hide"
     },
     "owners": [],
     "fornitori": [],
