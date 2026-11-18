@@ -1664,5 +1664,36 @@
     "note": "",
     "hidden": false,
     "ganttOrder": 35
+  },
+  {
+    "id": "1795002804322",
+    "nome": "Aggiunta campi per ADV",
+    "fornitori": [
+      "Engineering"
+    ],
+    "owners": [
+      "Simone"
+    ],
+    "progress": null,
+    "dataStima": null,
+    "dataIA": null,
+    "devStart": "2026-12-09",
+    "devEnd": "2026-12-15",
+    "dataTest": "2026-12-16",
+    "dataProd": "2027-01-24",
+    "dataUAT": null,
+    "dataBS": null,
+    "jiraLinks": [
+      "https://telepass.atlassian.net/browse/DPS-4539"
+    ],
+    "customMilestones": [],
+    "dataScadenzaStima": null,
+    "dataConfigSistema": null,
+    "stimaGgu": 15,
+    "rcFornitore": 390,
+    "stimaCosto": 5850,
+    "note": "",
+    "hidden": false,
+    "ganttOrder": 36
   }
 ]
